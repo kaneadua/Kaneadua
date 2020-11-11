@@ -1,3 +1,24 @@
 <div class="container">
-    <p>homepage works</p>
+    <div class="popular-games">
+        <h2>Popular Games</h2>
+        <div class="games-list">
+            <a *ngFor="let item of popularGames">
+                <img src="{{item.image}}">
+                <p>{{item.title}}</p>
+            </a>
+            <!-- <a>
+                <img src="https://www.kaneadua.com/wp-content/uploads/2020/06/fifa20-vault-drop-article-featured-image.jpg.adapt_.crop16x9.431p.jpg">
+                <p>FIFA 20</p>
+            </a> -->
+        </div>
+    </div>
+    <div class="recently-viewed-games">
+        <h2>Recently Viewed Games</h2>
+    </div>
+    <div class="gallery-games">
+        <h2>Gallery Games</h2>
+    </div>
+    <div class="games-slide-show">
+        <h2>All Games</h2>
+    </div>
 </div>
