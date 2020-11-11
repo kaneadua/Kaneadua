@@ -65,6 +65,9 @@ a {
     &:hover {
         border-bottom: 5px solid rgba(255, 255, 0, 0.856);
     }
+    &:active {
+        border-bottom: 5px solid rgba(255, 255, 0, 0.877);
+    }
 }
 
 .login {
@@ -95,7 +98,7 @@ a {
 }
 
 .active {
-    border-bottom: 5px solid rgba(255, 255, 0, 0.856);
+    border-bottom: 5px solid rgba(255, 255, 0, 0.877);
 }
 
 
