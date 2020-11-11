@@ -62,7 +62,7 @@ a {
     border-bottom: 4px solid transparent;
     border-top: 4px solid transparent;
     &:hover {
-        border-bottom: 5px solid red;
+        border-bottom: 5px solid rgba(255, 255, 0, 0.856);
     }
 }
 
@@ -87,6 +87,9 @@ a {
         //font-size: 14px;
         font-weight: bold;
         border-radius: 3px;
+        &:hover {
+            color: rgba(0, 0, 255, 0.836);
+        }
     }
 }
 
