@@ -61,6 +61,9 @@ a {
     height: 100%;
     border-bottom: 4px solid transparent;
     border-top: 4px solid transparent;
+    &:hover {
+        border-bottom: 5px solid red;
+    }
 }
 
 .login {
