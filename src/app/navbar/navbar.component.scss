@@ -33,16 +33,17 @@ a {
 }
 
 .nav_bar_links {
-    margin-left: 40px;
+    margin-left: 10px;
     height: 100%;
     overflow: hidden;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    //flex-wrap: wrap;
 }
 
 .nav_bar_links a {
-    font-size: 20px;
+    // font-size: 20px;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -93,6 +94,10 @@ a {
     }
 }
 
+.active {
+    border-bottom: 5px solid rgba(255, 255, 0, 0.856);
+}
+
 
 /*********SEARCH BOX**********************/
 
@@ -111,7 +116,7 @@ a {
 
 #search {
     // font-size: 18px;
-    width: 80vh;
+    width: 100%;
     padding: 1.2rem;
     padding-left: 3.5rem;
     // border-radius: 3rem;
