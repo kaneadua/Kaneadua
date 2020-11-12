@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-bar {
+    // position: fixed; // will change this soon  this makes the nav bar static
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 16px;
+    background: #40434E;
+    background: #6f727e;
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: #222;
+    height: 90px;
+    position: relative; // original position 
+    width: 100%;
+    z-index: 100;
+}
+
+a {
+    cursor: pointer;
+    align-content: center;
+}
+
+.logo {
+    width: 100%;
+    margin: auto 50%;
+    img {
+        width: 130px;
+        height: 90px;
+        margin: auto;
+    }
+}
+
+.main {
+    width: 90vh;
+    background: white;
+    border: 1px solid #d0d0d0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    margin: 20px auto 20px auto;
+}
