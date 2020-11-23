@@ -57,17 +57,6 @@ a {
 
 /*************************************/
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-//  {
-//     background: #95a5a6;
-//     background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/dark_embroidery.png);
-//     font-family: "Helvetica Neue", Arial, Sans-Serif;
-// }
 .main {
     height: 70vh;
     display: flex;
@@ -164,11 +153,6 @@ a {
     border-radius: 5px 5px 0 0;
 }
 
-// @media screen and(max-width: 1100px) {
-//     .main {
-//         margin-top: 16px;
-//     }
-// }
 @media screen and(max-width: 600px) {
     .main {
         margin-top: 16px;
