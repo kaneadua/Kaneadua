@@ -7,15 +7,15 @@
     <div class="main">
         <div class="login-wrap">
             <h2>Login</h2>
-    
-            <div class="form">
-                <input type="text" placeholder="Username" name="un" />
-                <input type="password" placeholder="Password" name="pw" />
-                <button> Sign in </button>
+
+            <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <input type="text" placeholder="Username" name="username" formControlName="username" />
+                <input type="password" placeholder="Password" name="password" formControlName="password" />
+                <button type="submit"> Sign in </button>
                 <a href="#">
                     <p> Don't have an account? Register </p>
                 </a>
-            </div>
+            </form>
         </div>
     </div>
     <div class="footer">
