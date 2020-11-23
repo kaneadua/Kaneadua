@@ -19,7 +19,7 @@
     background-color: white;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     color: #222;
-    height: 90px;
+    height: 60px;
     position: relative; // original position 
     width: 100%;
     z-index: 100;
@@ -35,10 +35,137 @@ a {
     margin: auto 50%;
     img {
         width: 130px;
-        height: 90px;
+        height: 60px;
         margin: auto;
     }
 }
 
 
 /*************************************/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+//  {
+//     background: #95a5a6;
+//     background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/dark_embroidery.png);
+//     font-family: "Helvetica Neue", Arial, Sans-Serif;
+// }
+.main {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.login-wrap {
+    position: relative;
+    margin: 0 auto;
+    // background: #ecf0f1;
+    background: white;
+    max-width: 400px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #333;
+    padding: 15px;
+    width: 60%;
+    min-width: 2px;
+}
+
+.login-wrap h2 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 2em;
+    margin-top: 10px;
+    color: #34495e;
+}
+
+.login-wrap .form {
+    padding-top: 20px;
+}
+
+.login-wrap .form input[type="text"],
+.login-wrap .form input[type="password"],
+.login-wrap .form button {
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 25px;
+    height: 56px;
+    border-radius: 5px;
+    outline: 0;
+}
+
+.login-wrap .form input[type="text"],
+.login-wrap .form input[type="password"] {
+    border: 1px solid #bbb;
+    padding: 0 0 0 10px;
+    font-size: 17px;
+}
+
+.login-wrap .form input[type="text"]:focus,
+.login-wrap .form input[type="password"]:focus {
+    border: 1px solid #3498db;
+}
+
+.login-wrap .form a {
+    text-align: center;
+    font-size: 16px;
+    color: #3498db;
+}
+
+.login-wrap .form a p {
+    padding-bottom: 10px;
+}
+
+.login-wrap .form button {
+    background: #e74c3c;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: box-shadow 0.4s ease;
+}
+
+.login-wrap .form button:hover {
+    box-shadow: 1px 1px 5px #555;
+}
+
+.login-wrap .form button:active {
+    box-shadow: 1px 1px 7px #222;
+}
+
+.login-wrap:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: -webkit-linear-gradient(left, #27ae60 0%, #27ae60 20%, #8e44ad 20%, #8e44ad 40%, #3498db 40%, #3498db 60%, #e74c3c 60%, #e74c3c 80%, #f1c40f 80%, #f1c40f 100%);
+    background: -moz-linear-gradient(left, #27ae60 0%, #27ae60 20%, #8e44ad 20%, #8e44ad 40%, #3498db 40%, #3498db 60%, #e74c3c 60%, #e74c3c 80%, #f1c40f 80%, #f1c40f 100%);
+    height: 5px;
+    border-radius: 5px 5px 0 0;
+}
+
+@media screen and(max-width: 600px) {
+    .main {
+        margin-top: 0;
+    }
+    .login-wrap {
+        width: 85%;
+    }
+    .login-wrap .form input[type="text"],
+    .login-wrap .form input[type="password"],
+    .login-wrap .form button {
+        font-size: 12px;
+        height: 40px;
+    }
+    .login-wrap .form a {
+        text-align: center;
+        font-size: 10px;
+        color: #3498db;
+    }
+}
