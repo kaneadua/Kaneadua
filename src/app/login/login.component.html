@@ -9,7 +9,7 @@
             <h2>Login</h2>
 
             <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                <p class="error" style="color: red"> invalid username or password </p>
+                <p class="error" *ngIf="error"> invalid username or password </p>
                 <input type="text" placeholder="Username" name="username" formControlName="username" />
                 <input type="password" placeholder="Password" name="password" formControlName="password" />
                 <button type="submit"> Sign in </button>

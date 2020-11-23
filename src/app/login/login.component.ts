@@ -7,7 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  error: true; // sets the error message to true
+  error:boolean = false; // sets the error message to true
   // login Form 
   loginForm: FormGroup;
   constructor() { }
@@ -22,8 +22,16 @@ export class LoginComponent implements OnInit {
 
   // function to submit the user details to the server
   onSubmit(){
-    console.log(this.loginForm); // console logs the login forms
-    console.log(this.loginForm.value)
+    if(this.loginForm.valid){
+      console.log(this.loginForm); // console logs the login forms
+      console.log(this.loginForm.value)
+    }
+    // if the form is invalid, display an error message
+    else{
+      this.error = true;
+    }
+    
+
 
   }
 
