@@ -8,7 +8,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { RegisterComponent } from './register/register.component';
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule} from '@angular/forms';
+import { BrowseGamesComponent } from './browse-games/browse-games.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {ReactiveFormsModule} from '@angular/forms'
     LoginComponent,
     NavbarComponent,
     MainpageComponent,
-    RegisterComponent
+    RegisterComponent,
+    BrowseGamesComponent
   ],
   imports: [
     BrowserModule,
