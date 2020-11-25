@@ -50,7 +50,7 @@ a {
     text-align: center;
     background: #ffe6e6;
     font-size: 11px;
-    width: 90%;
+    width: 85%;
     margin-left: 5%;
 }
 
@@ -99,6 +99,10 @@ a {
     height: 56px;
     border-radius: 5px;
     outline: 0;
+}
+
+.login-wrap .form button {
+    width: 93%;
 }
 
 .login-wrap .form input[type="text"],
@@ -170,5 +174,11 @@ a {
         text-align: center;
         font-size: 10px;
         color: #3498db;
+    }
+}
+
+@media screen and(max-width: 330px) {
+    .error {
+        width: 82%;
     }
 }

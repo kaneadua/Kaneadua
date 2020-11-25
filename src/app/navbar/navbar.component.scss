@@ -67,11 +67,11 @@ a {
     border-bottom: 4px solid transparent;
     border-top: 4px solid transparent;
     &:hover {
-        border-bottom: 5px solid rgba(255, 255, 0, 0.856);
+        border-bottom: 5px solid rgba(255, 255, 0, 0.993);
     }
-    &:active {
-        border-bottom: 5px solid rgba(255, 255, 0, 0.877);
-    }
+    // &:active {
+    //     border-bottom: 5px solid rgba(255, 255, 0, 0.877);
+    // }
 }
 
 .login {
@@ -103,6 +103,7 @@ a {
 
 .active {
     border-bottom: 5px solid rgba(255, 255, 0, 0.877);
+    // background-color: #eceef3ec;
 }
 
 
@@ -140,4 +141,14 @@ a {
     height: 40px;
     margin: 0;
     color: #222;
+}
+
+@media screen and (max-width: 500px) {
+    .login {
+        padding: 4px;
+        width: 73px;
+    }
+    .register {
+        display: none;
+    }
 }
