@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+
+/****************SIDE BAR**************/
+
+
+/*Function for dropdown*/
+
+.item ul,
+.nav input[type="checkbox"] {
+    display: none;
+}
+
+#menu:checked~.multi-level,
+.item input:checked~ul {
+    display: block;
+}
+
+
+/*Arrow*/
+
+.arrow {
+    width: 8px;
+    height: 8px;
+    vertical-align: middle;
+    float: left;
+    z-index: 0;
+}
+
+.menu .arrow {
+    transform: rotate(-90deg);
+    transition: 0.1s;
+}
+
+.item input:checked+.arrow-down .arrow {
+    transform: rotate(0deg);
+    transition: 0.1s;
+}
+
+
+/*Styles*/
+
+label:hover {
+    cursor: pointer;
+}
+
+label {
+    width: 100%;
+    display: block;
+    z-index: 3;
+    position: relative;
+}
+
+.nav {
+    width: 100%;
+    background-color: white;
+    overflow-x: hidden;
+    border-bottom: 1px solid #CFD8DC;
+}
+
+#nav-icon {
+    font-size: 28px;
+    line-height: 50px;
+    padding-left: 1em;
+    color: white;
+    background-color: #F44336;
+}
+
+.nav li a {
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+.menu {
+    border: 1px solid red;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.menu span {
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.item ul li {
+    cursor: pointer;
+    padding: 12px;
+    border: 1px solid;
+    text-align: left;
+}
+
+
+/*************SIDE BAR MENU ***************/
+
+
+/*****************************************/
+
+
+/*****************************************/
+
+
+/*****************************************/
+
+
+/*****************************************/
+
+
+/*****************************************/
+
+
+/*******Game Section*********/
+
+.game-section {
+    height: 100vh;
+    width: 100%;
+}
+
+.game-section h2 {
+    font-size: 24px;
+    margin: 0 20px 20px 20px;
+    padding-top: 16px;
+    line-height: 1.8;
+    display: flex;
+}
+
+.game-categories {
+    /* display: flex; */
+    margin-bottom: 10px;
+    padding-right: 25px;
+    padding-left: 20px;
+    font-size: 16px;
+    border-bottom: 2px solid;
+    border-color: #F4F4F4;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.game-categories span {
+    margin-right: 15px;
+    font-size: 14px;
+    color: #858585;
+    padding-bottom: 7px;
+    white-space: nowrap;
+}
+
+.game-categories ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.game-categories ul li {
+    margin-right: 15px;
+}
+
+.game-categories ul li a {
+    display: block;
+    padding-bottom: 10px;
+    text-decoration: none;
+    color: #434343;
+    font-weight: bold;
+    position: relative;
+}
+
+
+/***********************************/
+
+.game-select-options {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 10px 20px -7px 20px;
+}
+
+.game-select-options .select {
+    /* min-width: 200px; */
+    /* max-width: 200px; */
+    /* display: flex; */
+}
+
+.game-select-options select {
+    line-height: 16px;
+    padding: 6px 8px;
+    display: block;
+    font-size: 14px;
+    background-color: white;
+    background-image: none;
+    box-shadow: none;
+    color: #222;
+    border-color: #cdcdcd;
+    /* width: 100%; */
+    /* margin-right: 10px; */
+    margin: 9px;
+    width: 20vw;
+    height: 42px;
+}
+
+.tags {
+    border: 1px solid;
+    border-color: #dadada;
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+    padding: 0 8px;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #606060;
+    font-size: 14px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 35px;
+    box-sizing: border-box;
+    margin: 0 10px 7px 0;
+    cursor: pointer;
+}
+
+.tags:hover {
+    background: #da2c49;
+    color: white;
+}
+
+
+/*****************************/
+
+.games-grid {
+    padding: 20px 10px 0 20px;
+}
+
+
+/*****************************/
+
+.side-bar {
+    background: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    width: 280px;
+}
+
+.dropdown-content {
+    display: none;
+    /* position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+overflow: auto;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1; */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    cursor: pointer;
+    color: white;
+    background: #666;
+}
+
+.dropbtn {
+    /* background: rgb(124, 122, 120); */
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    width: 200px;
+}
+
+.show {
+    display: block;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    /* background-color: #4d5153; */
+}
