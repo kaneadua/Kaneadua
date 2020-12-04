@@ -160,7 +160,7 @@ form .button {
     z-index: -1;
     transition: all .4s;
     // background: linear-gradient(to left,yellow,black);
-    background: -webkit-linear-gradient(right, black, yellow, black, yellow)
+    background: -webkit-linear-gradient(right, orange, yellow, orange, yellow)
 }
 
 .button:hover .inner {
@@ -173,9 +173,10 @@ form .button {
     border: none;
     background: none;
     outline: none;
-    color: white;
+    // color: white;
     font-size: 20px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .auth {
@@ -259,6 +260,6 @@ form .button {
         margin: 0px 0 10px 0;
     }
     .signup {
-        margin-top: 18px;
+        margin: 18px 0px;
     }
 }
