@@ -50,27 +50,20 @@ a {
     color: red;
     border: none;
     padding: 15px;
-    /* height: 46px; */
     border-radius: 4px;
     margin-bottom: 10px;
     text-align: center;
     background: #ffe6e6;
     font-size: 11px;
     width: 100%;
-    //margin-left: 5%;
 }
 
 .main {
-    //height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
-    // font-family: sans-serif;
     justify-content: center;
-    // background: #6f727e;
-    /* background: url(bg.jpg);
-  background-size: cover;
-  background-position: center; */
+    margin-top: 15px;
 }
 
 .login__container {
@@ -82,8 +75,7 @@ a {
 
 header {
     font-size: 40px;
-    margin-bottom: 60px;
-    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5px;
 }
 
 .input-field,
@@ -123,19 +115,6 @@ input:focus {
     transition: .4s;
 }
 
-// span.show {
-//     right: 20px;
-//     color: #111;
-//     font-size: 14px;
-//     font-weight: bold;
-//     cursor: pointer;
-//     user-select: none;
-//     visibility: hidden;
-//     font-family: 'Open Sans', sans-serif;
-// }
-// input:valid~span.show {
-//     visibility: visible;
-// }
 input:focus~label {
     transform: translateY(-33px);
     background: white;
@@ -174,8 +153,8 @@ form .button {
     cursor: pointer;
 }
 
-.container .auth {
-    margin: 35px 0 20px 0;
+.auth {
+    margin: 1rem;
     font-size: 19px;
     color: grey;
 }
@@ -185,7 +164,7 @@ form .button {
     cursor: pointer;
 }
 
-.facebook,
+.github,
 .google {
     height: 40px;
     width: 100%;
@@ -196,7 +175,7 @@ form .button {
 }
 
 .facebook:hover {
-    border: 1px solid #4267B2;
+    border: 1px solid black;
 }
 
 .google:hover {
@@ -205,7 +184,7 @@ form .button {
 
 .facebook i,
 .facebook span {
-    color: #4267B2;
+    color: black;
 }
 
 .google i,
@@ -227,7 +206,7 @@ form .button {
 }
 
 .signup {
-    margin-top: 50px;
+    margin-top: 1rem;
 }
 
 .signup a {
@@ -237,4 +216,24 @@ form .button {
 
 .signup a:hover {
     text-decoration: underline;
+}
+
+// @media screen and (max-width: 450px) {
+// }
+@media screen and (max-width: 450px) {
+    .main {
+        margin-top: 0px;
+    }
+    .login__container {
+        padding: 0px 16px;
+    }
+    .header {
+        margin-bottom: 0px;
+    }
+    .auth {
+        margin: 0px 0 10px 0;
+    }
+    .signup {
+        margin-top: 18px;
+    }
 }
