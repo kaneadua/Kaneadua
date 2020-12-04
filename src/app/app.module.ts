@@ -9,7 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { RegisterComponent } from './register/register.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import { BrowseGamesComponent } from './browse-games/browse-games.component'
+import { BrowseGamesComponent } from './browse-games/browse-games.component';
+import { FooterComponent } from './footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BrowseGamesComponent } from './browse-games/browse-games.component'
     NavbarComponent,
     MainpageComponent,
     RegisterComponent,
-    BrowseGamesComponent
+    BrowseGamesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
