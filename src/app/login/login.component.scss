@@ -38,7 +38,7 @@ a {
 
 .logo {
     width: 100%;
-    margin: auto 50%;
+    // margin: auto 50%;
     img {
         width: 130px;
         height: 60px;
@@ -76,6 +76,8 @@ a {
 header {
     font-size: 40px;
     margin-bottom: 5px;
+    border-bottom: 2px solid;
+    border-color: #F4F4F4;
 }
 
 .input-field,
