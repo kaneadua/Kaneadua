@@ -20,8 +20,6 @@
     -ms-flex-align: center;
     align-items: center;
     font-size: 16px;
-    // background: #40434E;
-    // background: #6f727e;
     background-color: white;
     // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     color: #222;
@@ -125,7 +123,6 @@ select:-webkit-autofill:focus {
     transition: .4s;
 }
 
-// input:valid~label
 input:focus~label,
 .ng-dirty.ng-touched.ng-valid~label {
     transform: translateY(-33px);
@@ -199,7 +196,7 @@ form .button {
     transition: .4s;
 }
 
-.facebook:hover {
+.github:hover {
     border: 1px solid black;
 }
 
@@ -207,8 +204,8 @@ form .button {
     border: 1px solid #dd4b39;
 }
 
-.facebook i,
-.facebook span {
+.github i,
+.github span {
     color: black;
 }
 
