@@ -224,8 +224,7 @@ input:focus {
     border: 1px solid #1DA1F2;
 }
 
-.input-field label,
-span.show {
+.input-field label {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -239,23 +238,20 @@ span.show {
     transition: .4s;
 }
 
-span.show {
-    right: 20px;
-    color: #111;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    user-select: none;
-    visibility: hidden;
-    font-family: 'Open Sans', sans-serif;
-}
-
-input:valid~span.show {
-    visibility: visible;
-}
-
-input:focus~label,
-input:valid~label {
+// span.show {
+//     right: 20px;
+//     color: #111;
+//     font-size: 14px;
+//     font-weight: bold;
+//     cursor: pointer;
+//     user-select: none;
+//     visibility: hidden;
+//     font-family: 'Open Sans', sans-serif;
+// }
+// input:valid~span.show {
+//     visibility: visible;
+// }
+input:focus~label {
     transform: translateY(-33px);
     background: white;
     font-size: 16px;
@@ -291,7 +287,6 @@ form .button {
     color: white;
     font-size: 20px;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .container .auth {
@@ -344,12 +339,10 @@ form .button {
     font-size: 17px;
     font-weight: bold;
     padding-left: 8px;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .signup {
     margin-top: 50px;
-    font-family: 'Noto Sans', sans-serif;
 }
 
 .signup a {
