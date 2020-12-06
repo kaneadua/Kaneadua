@@ -3,6 +3,10 @@ footer {
     bottom: 0px; */
     width: 100%;
     background: #111;
+    color: white;
+    a {
+        color: white;
+    }
 }
 
 .main-content {
@@ -46,7 +50,7 @@ footer {
 
 .left .content p {
     text-align: justify;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 .left .content .social {
@@ -75,7 +79,7 @@ footer {
 }
 
 .center .content .fas {
-    font-size: 0.8rem;
+    font-size: 1rem;
     background: #1a1a1a;
     height: 35px;
     width: 35px;
@@ -93,9 +97,9 @@ footer {
 }
 
 .center .content .text {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 500;
-    /* padding-left: 10px; */
+    padding-left: 0.4rem;
 }
 
 .center .content .phone {
@@ -126,7 +130,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 @media screen and (max-width: 900px) {
