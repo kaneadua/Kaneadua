@@ -5,19 +5,6 @@
         </div>
     </div>
     <div class="main">
-        <!-- <div class="login-wrap">
-            <h2>Login</h2>
-
-            <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                <p class="error" *ngIf="error"> invalid username or password </p>
-                <input type="text" placeholder="Username" name="username" formControlName="username" />
-                <input type="password" placeholder="Password" name="password" formControlName="password" />
-                <button type="submit"> Sign in </button>
-                <a routerLink="/register">
-                    <p> Don't have an account? Register </p>
-                </a>
-            </form>
-        </div> -->
         <div class="login__container">
             <header>Login Form</header>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -52,8 +39,5 @@
 
         </div>
     </div>
-    <!-- <div class="footer">
-        <p>footer</p>
-    </div> -->
     <app-footer></app-footer>
 </div>
