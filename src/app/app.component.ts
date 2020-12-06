@@ -13,6 +13,6 @@ export class AppComponent {
   }
 
   ngOnInit(){
-    this.route.navigate(['/footer']);
+    this.route.navigate(['/login']);
   }
 }
