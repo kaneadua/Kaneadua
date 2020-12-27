@@ -126,6 +126,19 @@ label {
     padding-left: 5rem;
     border-bottom: 1px solid white;
     cursor: pointer;
+    a {
+        // font-size: 17px;
+        img {
+            height: 19px;
+            margin-right: 0.5rem;
+        }
+    }
+    i {
+        margin-right: 0.5rem;
+    }
+    .fa-apple {
+        font-size: 18px;
+    }
 }
 
 
