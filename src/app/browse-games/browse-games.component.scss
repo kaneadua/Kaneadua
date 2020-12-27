@@ -1,4 +1,5 @@
 @import "../homepage/homepage.component.scss";
+$background: #E5E5E5;
 * {
     margin: 0;
     padding: 0;
@@ -88,7 +89,8 @@ label {
 }
 
 .menu {
-    border: 1px solid red;
+    // border-bottom: 2px solid;
+    border-bottom: 1px solid #CFD8DC;
     padding: 15px;
     display: flex;
     align-items: center;
@@ -99,10 +101,13 @@ label {
     font-size: 16px;
 }
 
+.item ul {
+    background: $background;
+}
+
 .item ul li {
     cursor: pointer;
     padding: 12px;
-    border: 1px solid;
     text-align: left;
 }
 
