@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
       password: new FormControl('', Validators.required)
     });
 
+
+    // get the sign in with google user details
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
