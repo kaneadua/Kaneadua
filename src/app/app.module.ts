@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SocialLoginModule,  SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider} from 'angularx-social-login';
 import { UploadGamesComponent } from './upload-games/upload-games.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UploadGamesComponent } from './upload-games/upload-games.component';
     RegisterComponent,
     BrowseGamesComponent,
     FooterComponent,
-    UploadGamesComponent
+    UploadGamesComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
