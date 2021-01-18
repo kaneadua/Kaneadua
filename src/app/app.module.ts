@@ -47,12 +47,12 @@ import { SignUpComponent } from './sign-up/sign-up.component';
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              'clientId'
+              '359387323952-avo5iduludvah6vrj2ujcd8gag9d4d46.apps.googleusercontent.com'
             )
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('clientId')
+            provider: new FacebookLoginProvider('clientID')
           }
         ]
       } as SocialAuthServiceConfig,
