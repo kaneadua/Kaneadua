@@ -1,3 +1,4 @@
+import { SignUpComponent } from './sign-up/sign-up.component';
 import { RegisterComponent } from './register/register.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { LoginComponent } from './login/login.component';
@@ -12,7 +13,8 @@ const routes: Routes = [
     {path: 'home', component: HomepageComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'browse-games', component: BrowseGamesComponent},
-    {path: 'upload-games', component: UploadGamesComponent}
+    {path: 'upload-games', component: UploadGamesComponent},
+    {path: 'signUp', component: SignUpComponent},
   ]},
   {path: 'login', component: LoginComponent}
 ];
