@@ -11,10 +11,10 @@ import { UploadGamesComponent } from './upload-games/upload-games.component';
 const routes: Routes = [
   {path: '', component: MainpageComponent, children: [
     {path: 'home', component: HomepageComponent},
-    {path: 'register', component: RegisterComponent},
+    {path: 'register', component: SignUpComponent},
     {path: 'browse-games', component: BrowseGamesComponent},
     {path: 'upload-games', component: UploadGamesComponent},
-    {path: 'signUp', component: SignUpComponent},
+    // {path: 'signUp', component: SignUpComponent},
   ]},
   {path: 'login', component: LoginComponent}
 ];
