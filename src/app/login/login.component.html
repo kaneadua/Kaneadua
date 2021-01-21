@@ -29,12 +29,12 @@
                 <div class="github">
                     <i class="fab fa-github-square"><span>Github</span></i>
                 </div>
-                <div class="google">
+                <div class="google" (click)="signInWithGoogle()">
                     <i class="fab fa-google-plus-square"><span>Google</span></i>
                 </div>
             </div>
             <div class="signup">
-                Not a member? <a>Signup now</a>
+                Not a member? <a routerLink="/register">Signup now</a>
             </div>
 
         </div>
