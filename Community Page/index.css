@@ -1,0 +1,136 @@
+/*Diminishing the default margin and padding of the browser*/
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	height: 100%;
+	width: 100%;
+    background: #f3f3f3;
+}
+/*Styling the header contents*/
+
+    /*End of header styling
+    ----------------------------------------------------------------------------------------------
+    */
+    fieldset{
+    	margin:0;
+    	margin-left: 1%;
+    	width: 98%;
+        margin-top:100px;
+        margin-bottom: 100px;
+        background: #fff;
+    }
+    fieldset div{
+    	margin: 20px;
+    }
+    #community{
+    	width: 90%;
+    	height: 20%;
+    	
+    	
+
+    }
+    #community p{
+    	padding: 5%;
+        padding-top: 3%;
+    	padding-bottom: 0;
+    	float: left;
+    	font-weight: bolder;
+    	font-size: 2.6em;
+    }
+
+    #search{
+    	margin-left: 20%;
+    	margin-bottom: 3%;
+    	margin-top: 8%;
+    	padding: 2%;
+    	border-radius: 15%;
+    	border:2px solid red;
+    }
+
+    #search:focus{
+    	outline: transparent;
+    }
+
+   
+    hr{
+    	margin-top: 15px;
+    }
+    hr#hr{
+    	margin: 0;
+    	margin-bottom: 20px;
+    }
+    fieldset div p{
+    	margin: 15px;
+    	font-size: 1.2em;
+    }
+    #categories{
+    	margin: 20px;
+    	margin-bottom: 0;
+    }
+    fieldset a{
+        text-decoration: none;
+        color: red;
+    }
+    #categories a{
+    	text-decoration: none;
+
+    }
+    #categories a:hover{
+    	text-decoration: underline;
+    }
+    fieldset a{
+    	padding-right: 20px;
+    }
+    section{
+    	
+    	background: grey;
+    	opacity: 50%;
+    	width: 100%vw;
+    	height: 100%vh;
+    	margin: 10px;
+
+    }
+    .vr{
+    	border: 3px solid black;
+    	position: relative;
+    	float: right;
+    	margin-right: 400px;
+    	height: 37px;
+    	margin-top: 0;
+    }
+
+    section a{
+    	text-decoration: none;
+    	color: black;
+    	margin-top: 15px;
+    	
+    }
+    #odd{
+    	font-size: 1.2em;
+    }
+    section p{
+    	padding: 10px;
+    	font-size: 0.2em;
+    	font-weight: bold;
+    	font-family: sans-serif;
+    }
+   h2{
+   	margin:20px;
+   	margin-bottom: 0;
+   }
+   #about{
+   	font-size: 1.1em;
+   	margin-top: 0;
+   	opacity: 70%;
+   }
+    
+
+    #GeneralDiscussion{
+    	float: right;
+    	color: dimgrey;
+    	font-size: 1.4em;
+    	text-shadow: 1px 1px 0px black;
+
+    }
