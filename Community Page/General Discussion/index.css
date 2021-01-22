@@ -203,6 +203,7 @@ body{
 .section-4{
 	background-color: white;
 	min-height: 10em;
+	margin-bottom: 10em;
 
 }
 
@@ -318,5 +319,7 @@ body{
 	text-decoration: none;
 	color: black;
 }
+
+
 
 

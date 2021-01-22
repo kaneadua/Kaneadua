@@ -43,7 +43,7 @@ connect_database();
 			$title = $_POST['title'];
 			$details=$_POST['details'];
 			insert_topics($author,$title,$details);
-			echo  '<script>window.location="/discussion-page/index.php"</script>';
+			echo  '<script>window.location="/General Discussion/index.php"</script>';
 		}
-	} else echo  '<script>window.location="/General Discussion/index.php"</script>';
+	} else echo  '<script>window.location="/index.php"</script>';
  ?>

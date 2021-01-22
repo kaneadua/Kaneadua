@@ -1,5 +1,3 @@
-
-
 function showHide(){
 			var button = document.getElementById('togscreen')
 			var section = document.getElementById('container')
@@ -151,4 +149,3 @@ function load_topics_parser(id,title,author,number_of_replies,replyer,date_repli
 
 
 }
-
