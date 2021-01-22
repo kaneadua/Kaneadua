@@ -61,6 +61,13 @@
 		
 	}
 
+    function insert_topics($author,$title,$details){
+       global $db_server;
+
+       $query="INSERT INTO topic(author,title,details) VALUES(\"$author\",\"$title\",\"$details\")";
+
+       $db_server->query($query);
+    }
 
 	function display(){
 		global $db_server;
@@ -104,7 +111,7 @@
 	      	   $date_replied=ago($date_replied); //replied date
 	      	   $number_of_replies.= $number_of_replies > 1 ? " replies": " reply";  ///number of replies
 	      	   
-			   echo "<script>load_topics_parser($id,'$title','$author','$number_of_replies','$replyer','$date_replied');</script>";
+			   echo "<script>load_topics_parser($id,\"$title\",\"$author\",\"$number_of_replies\",\"$replyer\",\"$date_replied\");</script>";
 	          } 
 
 	}
@@ -120,7 +127,7 @@
 
  if(isset($_POST["function"])){
 
-if($_POST["function"]=='createTopicPermission'){
+ if($_POST["function"]=='createTopicPermission'){
    $aResult = array();
 
    $aResult['result'] = createTopicPermission();

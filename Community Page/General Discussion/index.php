@@ -8,32 +8,35 @@
 	<meta name="HandleIdFriendly" content="true">
 	<title>Community Page</title>
 	<link rel="stylesheet" href="index.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+	<script src="/jquery.js"></script>
 	<script src="index.js"></script>
 
-	<script type="text/javascript">$(document).ready(function() {
+	<script type="text/javascript">
+		$(document).ready(function() {
 
-    $("#newTopicButton").click(function() { 
-    	
-    	console.log("button clicked");
-    	var a;
-    	jQuery.ajax({
-    		type: "POST",
-    		url: '/php/forum.php',
-    		dataType: 'json',
-    		data: {function:'createTopicPermission'},
-    		success: function(obj,textstatus){
-    			if( !('error' in obj) ){
-    				a = obj.result;
-    				console.log(a);
-    				if(!a) window.location="/dummy-login/index.php";
-    			}
-    			  else console.log(obj.error);
-    		}
+		    $("#newTopicButton").click(function() { 
+		    	
+		    	console.log("button clicked");
+		    	var a;
+		    	jQuery.ajax({
+		    		type: "POST",
+		    		url: '/php/forum.php',
+		    		dataType: 'json',
+		    		data: {function:'createTopicPermission'},
+		    		success: function(obj,textstatus){
+		    			if( !('error' in obj) ){
+		    				a = obj.result;
+		    				console.log(a);
+		    				if(!a) window.location="/dummy-login/index.php";
+		    					else window.location="/new-post/index.php"
+		    			}
+		    			  else console.log(obj.error);
+		    		}
 
-    	});
+		    	});
 
-     });
+		     });
    
    });</script>
 

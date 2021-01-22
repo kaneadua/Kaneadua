@@ -30,7 +30,7 @@ function general_discussion_topics(number){
 function load_topics_parser(id,title,author,number_of_replies,replyer,date_replied){
 
   var section = document.getElementsByClassName('section-4')[0];
-  var url = "example.php?article=" + id;
+  var url = "/discussion-page/index.php?article=" + id;
  	 
  /////a
   var article = document.createElement('a')

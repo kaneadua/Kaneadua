@@ -1,0 +1,28 @@
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin:0;
+}
+
+section{
+	background-color: grey;
+	width: 100%;
+	height: 80px;
+}
+
+body{
+	height: 100%;
+	width: 100%;
+	background-color: #0A1B31;
+}
+
+main{
+	color: white;
+	font-family: georgia;
+	width: 98%;
+	position: relative;
+	margin: 0 auto;
+	padding: 2em;
+	height: 100%;
+
+}
