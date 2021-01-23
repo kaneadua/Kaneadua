@@ -1,12 +1,12 @@
 <div class="container">
     <div class="nav-bar" routerLink="/home" style="cursor: pointer;">
         <div class="logo">
-            <a routerLink="/home"><img src="../../assets/Kaneadua.jpeg"> </a>
+            <a routerLink="/home"><img src="../../assets/logo.png"> </a>
         </div>
     </div>
     <div class="main">
         <div class="login__container">
-            <header>Login Form</header>
+            <header>Login</header>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <p class="error" *ngIf="error"> invalid username or password </p>
                 <div class="input-field">

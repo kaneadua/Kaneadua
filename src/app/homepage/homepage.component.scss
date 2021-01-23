@@ -27,6 +27,7 @@
 
 h2 {
     margin-left: 6%;
+    color: white;
 }
 
 .games-list {
@@ -123,7 +124,7 @@ h2 {
     } */
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
         grid-auto-rows: auto;

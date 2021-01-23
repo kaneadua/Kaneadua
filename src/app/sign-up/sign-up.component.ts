@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -13,8 +13,26 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
+      userName: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl(''),
+      confirmPassword: new FormControl(''),
+      countryOfResidence: new FormControl(''),
+      // checkboxes: requiredTrue
+      newsLetter: new FormControl(''),
+      termsAndConditions: new FormControl('')
       
     });
   }
 
+  isValidInput(fieldName): boolean {
+    return this.signUpForm.controls[fieldName].invalid &&
+      (this.signUpForm.controls[fieldName].dirty || this.signUpForm.controls[fieldName].touched);
+   }
+
+  onSignUp(){
+    console.log(this.signUpForm);
+  }
+
 }
+
