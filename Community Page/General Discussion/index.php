@@ -42,13 +42,14 @@
 
 </head>
 <body>
+	<section id="header">header</section>
 
 
 	<div class="content_minus_header">
 		
 		<section class="section-1">
-			<a href="../index.php">Kaneadua Community</a> >> <a href="index.php">General</a>
-		</section>
+			<pre> <a href="../index.php">Kaneadua Community</a>  >>  <a href="../General Discussion/index.php">General Discussion</a>  </pre>
+</section>
 
 		<section class="section-2">
 			<div id="first"><p>General Discussion</p></div>

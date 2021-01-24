@@ -32,7 +32,10 @@ function ago($timestamp)
     } else if ($dt->s > 0) {
         $number = $dt->s;
         $unit = "second";
+    } else if ($dt->s == 0) {
+        return "just now";
     }
+
     
     $unit .= $number  > 1 ? "s" : "";
 

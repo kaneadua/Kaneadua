@@ -22,7 +22,7 @@
 											author VARCHAR(50),
 											title VARCHAR(250),
 											details VARCHAR(2000),
-											date_created DATETIME,
+											date_created TIMESTAMP,
 											INDEX(author(10)),
 											FULLTEXT(title),
 											FULLTEXT(details)
@@ -38,7 +38,7 @@
 											title VARCHAR(250),
 											message VARCHAR(1000),
 											replyer VARCHAR(50),
-											date_replied DATETIME,
+											date_replied TIMESTAMP,
 											FULLTEXT(title),
 											FULLTEXT(message)
 											) ENGINE MyISAM';
@@ -47,17 +47,17 @@
 
 
 
-		$query = 'CREATE TABLE IF NOT EXISTS comment(
-											id INT UNSIGNED NOT NULL AUTO_INCREMENT KEY,
-											reply VARCHAR(1000),
-											message VARCHAR(500),
-											date_commented DATETIME,
-											FULLTEXT(reply),
-											FULLTEXT(message)
-											) ENGINE MyISAM';
+		// $query = 'CREATE TABLE IF NOT EXISTS comment(
+		// 									id INT UNSIGNED NOT NULL AUTO_INCREMENT KEY,
+		// 									reply VARCHAR(1000),
+		// 									message VARCHAR(500),
+		// 									date_commented DATETIME,
+		// 									FULLTEXT(reply),
+		// 									FULLTEXT(message)
+		// 									) ENGINE MyISAM';
 
 
-		$db_server->query($query);
+		// $db_server->query($query);
 		
 	}
 
@@ -67,6 +67,15 @@
        $query="INSERT INTO topic(author,title,details) VALUES(\"$author\",\"$title\",\"$details\")";
 
        $db_server->query($query);
+    }
+
+    function insert_replies($title,$message,$replyer){
+    	global $db_server;
+
+    $query="INSERT INTO reply(title,message,replyer) VALUES(\"$title\",\"$message\",\"$replyer\")";
+
+    $db_server->query($query);
+
     }
 
 	function display(){
@@ -117,6 +126,53 @@
 	}
 
 
+	function getTopic($id){  ///////discussion-page main topic
+		global $db_server;
+
+		$query = "SELECT * FROM topic WHERE id = \"$id\"";
+		$result = $db_server->query($query);
+		$result->data_seek(0);
+		$row = $result->fetch_array(MYSQLI_ASSOC);
+
+		$title = $row['title'];
+		$author= "Topic posted by ".$row['author'];
+		$details=$row['details'];
+		$date_created=ago($row['date_created']);
+
+
+		$query = "SELECT * FROM reply WHERE title = \"$title\"";
+	    $result2 = $db_server->query($query);
+	    $number_of_replies = $result2->num_rows;
+	    $number_of_replies.= $number_of_replies > 1 ? " replies": " reply";
+
+	    echo "<script>get_topic_parser(\"$title\",\"$author\",\"$details\",\"$date_created\",\"$number_of_replies\")</script>";
+
+	    fetch_replies($title);
+
+	}
+
+	function fetch_replies($title){
+		global $db_server;
+		$_SESSION["title"] = $title;
+
+		$query = "SELECT * FROM reply WHERE title = \"$title\" ORDER BY id DESC";
+		$result = $db_server->query($query);
+		$count = $result->num_rows;
+
+		for($j=0;$j<$count;++$j) 
+	      	  {   
+	      	   $result->data_seek($j);  
+	      	   $row = $result->fetch_array(MYSQLI_ASSOC);
+	      	   $message = $row['message'];  /// replied message
+	      	   $replyer = $row['replyer'];  /// replier
+	      	   $date_replied= ago($row['date_replied']);  ///replied date
+
+	      	   echo "<script>load_replies_parser(\"$message\",\"$replyer\",\"$date_replied\");</script>";
+
+	      	  }
+	}
+
+
  	function createTopicPermission(){
  			 session_start();
  			  if (isset($_SESSION['username'])) return 1;
@@ -125,16 +181,16 @@
 
  			  }
 
- if(isset($_POST["function"])){
+	 if(isset($_POST["function"])){
 
- if($_POST["function"]=='createTopicPermission'){
-   $aResult = array();
+	 if($_POST["function"]=='createTopicPermission'){
+	   $aResult = array();
 
-   $aResult['result'] = createTopicPermission();
+	   $aResult['result'] = createTopicPermission();
 
-   echo json_encode($aResult);
+	   echo json_encode($aResult);
 
-}
-}
+	}
+	}
 	
  ?>

@@ -17,7 +17,7 @@
 		body{
 			background-color: pink;
 		}
-		h1{
+		h1,h3{
 			text-align: center;
 			font-family: monospace;
 			font-weight: bold;
@@ -27,7 +27,8 @@
 	</style>
 </head>
 <body>
-	<h1>Sign in with any name you wish to use for the site</h1>
+	<h1>Please Log-in First 👻 </h1>
+	<h3>Use any random ID for now 🥰</h3>
 <div>
 
 	<form method="POST" action="">
@@ -41,13 +42,34 @@
 </html>
 
 <?php
-session_start();
+	require_once "../php/forum.php";
+	require_once "../php/date.php"; 
+
+
+	  session_start();
+	  connect_database();
+
 
 if(isset($_POST["username"]))
 {
 	
-		$_SESSION['username'] = $_POST['username'];
-		echo "<script>document.location='/General Discussion/index.php'</script>";
+		$_SESSION["username"] = $_POST['username'];
+
+		if ($_SESSION["temp"] != "") {
+
+			insert_replies($_SESSION["title"],$_SESSION["temp"],$_SESSION["username"]);
+			$_SESSION["temp"] = "";
+			
+			if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") 
+				$url = "https://";
+		    else $url = "http://";
+
+			$url .= $_SESSION['pUrl']; 
+			
+
+			echo "<script>document.location=\"$url\"</script>";
+
+		} else echo "<script>document.location='/new-post/index.php'</script>";
 	
 }
 

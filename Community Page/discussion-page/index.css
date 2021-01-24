@@ -16,6 +16,10 @@ body{
 	background-color: #0A1B31;
 }
 
+.section-1,.section-1 a {
+	color: white;
+}
+
 main{
 	color: lightgrey;
 	font-family: courier;
@@ -39,10 +43,10 @@ main{
 }
 
 #title{
-	font-size: 1em;
+	font-size: 1.5em;
 	text-transform: capitalize;
 	font-weight: bold;
-	text-shadow: 1px 1px 0px pink;
+	text-shadow: 1px 1px 0px white;
 }
 
 @media (min-width: 50em) { 
@@ -65,6 +69,7 @@ main{
 	align-items: center;
 	border-radius: 0em 0em 1em 1em;
 	justify-content: space-between;
+	margin-top: 2em;
 }
 
 .attr div{
@@ -110,9 +115,12 @@ hr{
 	margin: 0 auto 2em auto;
 	font-family: courier;
 	color: lightgrey;
-	padding: .5em;
 	border-radius: 1em;
 	box-shadow: 0px 0px 1em #15060C;
+}
+
+#fix{
+	padding: 2em 2em 0 2em;
 }
 
 
@@ -128,9 +136,10 @@ hr{
 }
 
 
-.benchmark{
-
-}
+/*#benchmark{
+	border:solid thick red;
+	height: 20em;
+}*/
 
 .reply_box{
 	width: 95%;

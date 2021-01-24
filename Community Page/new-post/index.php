@@ -10,6 +10,10 @@
 <body>
 	<section>header</section>
 
+	<section class="section-1">
+			<pre> <a href="../index.php">Kaneadua Community</a>  >>  <a href="../General Discussion/index.php">General Discussion</a>  </pre>
+</section>
+
 	<main>
 
 		<h2>Post a new Topic</h2>
@@ -20,7 +24,7 @@
 			<textarea id="textarea" name="details" style="display: none;"></textarea>
 			<label for="body"><u>Body</u></label>
 			<br><br><br>
-			<div id="body" contentEditable=true spellcheck=true placeholder="begin explaining yourself 🤪 . . ." ></div>
+			<div id="body" contentEditable=true spellcheck=true placeholder="begin explaining yourself 🤪 . . ." onpaste="var e=this; setTimeout(function(){see_saw(e.innerText)},4);" ></div>
 			<br><br>
 			<button>Post</button>
 		</form>
@@ -36,7 +40,7 @@ require_once "../php/forum.php";
 session_start();
 connect_database();
 
-	if ($_SESSION["username"]!=null){
+	if (isset($_SESSION["username"])){
 
 		if(isset($_POST['title']) && isset($_POST['details'])){
 			$author= $_SESSION['username'];
@@ -44,6 +48,6 @@ connect_database();
 			$details=$_POST['details'];
 			insert_topics($author,$title,$details);
 			echo  '<script>window.location="/General Discussion/index.php"</script>';
-		}
+		} 
 	} else echo  '<script>window.location="/index.php"</script>';
  ?>
