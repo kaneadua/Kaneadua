@@ -9,18 +9,27 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
+  userNameErrorMessage = "Username must begin with alphabet and may include numbers or hyphen";
+  emailErrorMessage = "Email is invalid";
+  passwordErroMessage = "Password must be at least 8 characters";
+  confirmPasswordErroMessage = "Both Passwords does not match";
+  countryOfOriginErrorMessage = "you must select your country of origin";
+  countryOfOriginErrorMessage2 = "Are you trying to create your own country?";
+  termsAndConditionsErrorMessage = "You must select our terms and conditions first";
+
+
   constructor() { }
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
-      userName: new FormControl('', Validators.required),
+      userName: new FormControl('', [Validators.required, Validators.pattern("")]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl(''),
-      confirmPassword: new FormControl(''),
-      countryOfResidence: new FormControl(''),
+      password: new FormControl('',[Validators.required, Validators.minLength(8)]),
+      confirmPassword: new FormControl('',[Validators.required, Validators.minLength(8)]),
+      countryOfResidence: new FormControl('', Validators.required),
       // checkboxes: requiredTrue
-      newsLetter: new FormControl(''),
-      termsAndConditions: new FormControl('')
+      newsLetter: new FormControl('', Validators.requiredTrue),
+      termsAndConditions: new FormControl('',Validators.requiredTrue)
       
     });
   }
@@ -31,8 +40,12 @@ export class SignUpComponent implements OnInit {
    }
 
   onSignUp(){
+    // this is where i put the javascript code
     console.log(this.signUpForm);
   }
 
+  onSubmit(){
+    // this is where i put the raw javascript code
+  }
 }
 
