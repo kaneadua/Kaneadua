@@ -4,42 +4,55 @@
             <img id="logo" src="../../assets/logo.png" alt="">
             <h2 id="heading">Create An Account</h2>
         </div>
-        <form class="form" id="form" [formGroup]="signUpForm">
-            <div class="form-control">
+        <form class="form" id="form" [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+            <div class="form-control" [ngClass]="isValidInput('userName') ? 'error' :'success'">
                 <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Enter your Username">
+                <input type="text" id="username" placeholder="Enter your Username" formControlName='userName'>
+                <!-- signUpForm.controls['password'].errors.required -->
                 <i class="fa fa-smile-o"></i>
                 <i class="fa fa-frown-o"></i>
-                <p class="errorMessage">Error Message</p>
+                <div class="error3" *ngIf="isValidInput('email')">
+                    <p class="errorMessage" *ngIf="signUpForm.controls['userName'].errors.required">Username is required</p>
+                    <p class="errorMessage" *ngIf="signUpForm.controls['userName'].errors.pattern">{{userNameErrorMessage}}</p>
+                </div>
             </div>
 
-            <div class="form-control">
+            <div class="form-control" [ngClass]="isValidInput('email') ? 'error' :'success'">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your Email">
+                <input type="email" id="email" placeholder="Enter your Email" formControlName="email">
                 <i class="fa fa-smile-o"></i>
                 <i class="fa fa-frown-o"></i>
-                <p class="errorMessage">Error Message</p>
+                <div class="error3" *ngIf="isValidInput('email')">
+                    <p class="errorMessage" *ngIf="signUpForm.controls['email'].errors.required">Email is required</p>
+                    <p class="errorMessage" *ngIf="signUpForm.controls['email'].errors.email">Must be a valid email format</p>
+                </div>
+
             </div>
 
-            <div class="form-control">
+            <div class="form-control" [ngClass]="isValidInput('password') ? 'error' :'success'">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your Password">
+                <input type="password" id="password" placeholder="Enter your Password" formControlName="password">
                 <i class="fa fa-smile-o"></i>
                 <i class="fa fa-frown-o"></i>
-                <p class="errorMessage">Error Message</p>
+                <div class="error3" *ngIf="isValidInput('email')">
+                    <p class="errorMessage" *ngIf="signUpForm.controls['password'].errors.required">Password is required</p>
+                    <p class="errorMessage" *ngIf="signUpForm.controls['password'].errors.minlength">{{passwordErroMessage}}</p>
+                </div>
             </div>
 
-            <div class="form-control">
+            <div class="form-control" [ngClass]="isValidInput('confirmPassword') ? 'error' :'success'">
                 <label for="password2">Confirm Password</label>
-                <input type="password" id="password2" placeholder="Confirm your Password">
+                <input type="password" id="password2" placeholder="Confirm your Password" formControlName="confirmPassword">
                 <i class="fa fa-smile-o"></i>
                 <i class="fa fa-frown-o"></i>
-                <p class="errorMessage">Error Message</p>
+                <p class="errorMessage" *ngIf="signUpForm.controls['password'].errors.required">Password is required</p>
+                <p class="errorMessage" *ngIf="signUpForm.controls['password'].errors.minlength">{{passwordErroMessage}}</p>
+                <p class="errorMessage" *ngIf="signUpForm.controls['password'].value!==signUpForm.controls['confirmPassword'].value">{{confirmPasswordErroMessage}}</p>
             </div>
 
-            <div class="form-control">
+            <div class="form-control" [ngClass]="isValidInput('countryOfResidence') ? 'error' :'success'">
                 <label for="contry">Country Of Residence</label>
-                <input type="text" name="country" id="contry" list="country" placeholder="choose country">
+                <input type="text" name="country" id="contry" list="country" placeholder="choose country" formControlName="countryOfResidence">
                 <datalist id="country">
              <option value="Afghanistan">Afghanistan</option>
             <option value="Albania">Albania</option>
@@ -290,13 +303,13 @@
 
             <div id="nws">
 
-                <input type="checkbox" name="Newsletter" checked/>
+                <input type="checkbox" name="Newsletter" checked formControlName="newsLetter" />
                 <label for="nws">Newsletter Sign up </label>
 
             </div>
 
             <div id="TnC" class="TermsAndConditions">
-                <input id="terms" type="checkbox" />
+                <input id="terms" type="checkbox" formControlName="termsAndConditions" />
 
                 <label for="TnC">I'm not less than 13 years of age and I accept to the Terms of service </label>
 
@@ -307,7 +320,7 @@
             </div>
 
 
-            <button>Create Account</button>
+            <button type="submit">Create Account</button>
 
 
         </form>
