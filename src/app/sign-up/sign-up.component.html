@@ -11,8 +11,8 @@
                 <!-- signUpForm.controls['password'].errors.required -->
                 <i class="fa fa-smile-o"></i>
                 <i class="fa fa-frown-o"></i>
-                <div class="error3" *ngIf="isValidInput('email')">
-                    <p class="errorMessage" *ngIf="signUpForm.controls['userName'].errors.required">Username is required</p>
+                <div class="error3" *ngIf="isValidInput('userName')">
+                    <p class="errorMessage" *ngIf="signUpForm.controls['userName'].errors.required ">Username is required</p>
                     <p class="errorMessage" *ngIf="signUpForm.controls['userName'].errors.pattern">{{userNameErrorMessage}}</p>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                 <input type="password" id="password" placeholder="Enter your Password" formControlName="password">
                 <i class="fa fa-smile-o"></i>
                 <i class="fa fa-frown-o"></i>
-                <div class="error3" *ngIf="isValidInput('email')">
+                <div class="error3" *ngIf="isValidInput('password')">
                     <p class="errorMessage" *ngIf="signUpForm.controls['password'].errors.required">Password is required</p>
                     <p class="errorMessage" *ngIf="signUpForm.controls['password'].errors.minlength">{{passwordErroMessage}}</p>
                 </div>
@@ -45,9 +45,11 @@
                 <input type="password" id="password2" placeholder="Confirm your Password" formControlName="confirmPassword">
                 <i class="fa fa-smile-o"></i>
                 <i class="fa fa-frown-o"></i>
-                <p class="errorMessage" *ngIf="signUpForm.controls['password'].errors.required">Password is required</p>
-                <p class="errorMessage" *ngIf="signUpForm.controls['password'].errors.minlength">{{passwordErroMessage}}</p>
-                <p class="errorMessage" *ngIf="signUpForm.controls['password'].value!==signUpForm.controls['confirmPassword'].value">{{confirmPasswordErroMessage}}</p>
+                <div class="error3" *ngIf="isValidInput('confirmPassword')">
+                    <p class="errorMessage" *ngIf="signUpForm.controls['confirmPassword'].errors.required">Password is required</p>
+                    <p class="errorMessage" *ngIf="signUpForm.controls['confirmPassword'].errors.MatchPassword">{{confirmPasswordErroMessage}}</p>
+                </div>
+
             </div>
 
             <div class="form-control" [ngClass]="isValidInput('countryOfResidence') ? 'error' :'success'">
@@ -298,7 +300,8 @@
         </datalist>
                 <i class="fa fa-smile-o"></i>
                 <i class="fa fa-frown-o"></i>
-                <p class="errorMessage">Error Message</p>
+                <p class="errorMessage" *ngIf="signUpForm.controls['countryOfResidence'].errors.required">you must select your country of origin</p>
+                <!-- <p class="errorMessage" *ngIf="signUpForm.controls['countryOfResidence'].errors.MatchedCountry">you must select your country of origin</p> -->
             </div>
 
             <div id="nws">
@@ -320,7 +323,7 @@
             </div>
 
 
-            <button type="submit">Create Account</button>
+            <button type="submit" ng-disabled="false">Create Account</button>
 
 
         </form>
