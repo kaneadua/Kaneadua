@@ -13,6 +13,7 @@ export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
   passwordError: boolean;
   invalidUserName : boolean;
+  submitted: boolean;
   userNameErrorMessage = "Username must begin with alphabet and may include numbers or hyphen";
   passwordErroMessage = "Password must be at least 8 characters";
   confirmPasswordErroMessage = "Both Passwords does not match";
@@ -29,7 +30,7 @@ export class SignUpComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('',[Validators.required, Validators.minLength(8)]),
       confirmPassword: new FormControl('',[Validators.required, Validators.minLength(8)]),
-      countryOfResidence: new FormControl('',[ Validators.required]),
+      countryOfResidence: new FormControl('',[ PasswordValidation.ValidCountry]),
       // checkboxes: requiredTrue
       newsLetter: new FormControl('', Validators.requiredTrue),
       termsAndConditions: new FormControl('',Validators.requiredTrue)
@@ -38,8 +39,8 @@ export class SignUpComponent implements OnInit {
   }
 
   isValidInput(fieldName): boolean {
-    return this.signUpForm.controls[fieldName].invalid &&
-      (this.signUpForm.controls[fieldName].dirty || this.signUpForm.controls[fieldName].touched);
+    return this.signUpForm.controls[fieldName].invalid && //this.signUpForm.controls[fieldName].touched;
+       (this.signUpForm.controls[fieldName].dirty || this.signUpForm.controls[fieldName].touched);
    }
 
   isInvalidInput(fieldName:string){
@@ -48,16 +49,28 @@ export class SignUpComponent implements OnInit {
      }
   }
 
+
+  validateAllFormFields(formGroup: FormGroup){
+    Object.keys(formGroup.controls).forEach( field=>{
+      const control = formGroup.get(field);
+      control.markAsTouched({onlySelf: true});
+    }
+
+    )
+  }
   onSignUp(){
+    console.log(this.signUpForm.get('countryOfResidence').value);
     if(this.signUpForm.valid==false){
-      console.log('Invalid input');
-      this.isInvalidInput('userName');
-      this.isInvalidInput('email');
-      this.isInvalidInput('password');
-      this.isInvalidInput('confirmPassword');
-      this.isInvalidInput('countryOfResidence');
-      this.isInvalidInput('newsLetter');
-      this.isInvalidInput('termsAndConditions');
+      // console.log('Invalid input');
+      // this.isInvalidInput('userName');
+      // this.isInvalidInput('email');
+      // this.isInvalidInput('password');
+      // this.isInvalidInput('confirmPassword');
+      // this.isInvalidInput('countryOfResidence');
+      // this.isInvalidInput('newsLetter');
+      // this.isInvalidInput('termsAndConditions');
+      this.validateAllFormFields(this.signUpForm);
+
     }
     else{
       console.log(this.signUpForm);
