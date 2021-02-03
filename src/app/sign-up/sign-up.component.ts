@@ -87,6 +87,10 @@ export class SignUpComponent implements OnInit {
       this.postService.SendDetails(userDetails).subscribe(
         response =>{
           console.log(response);
+        },
+        error => {
+          alert("An uxpected error occured");
+          console.log(error);
         }
       )
     }
