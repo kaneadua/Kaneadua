@@ -88,9 +88,16 @@ export class SignUpComponent implements OnInit {
         response =>{
           console.log(response);
         },
-        error => {
-          alert("An uxpected error occured");
-          console.log(error);
+        (error: Response) => {
+          // checks if the user entered an invalid data
+          if(error.status === 400){
+            this.signUpForm.setErrors(error.json());
+          }
+          else{
+            alert("An uxpected error occured");
+            console.log(error);
+          }
+          
         }
       )
     }
