@@ -82,7 +82,7 @@ export class SignUpComponent implements OnInit {
         password: this.signUpForm.controls['password'].value,
         countryOfOrigin: this.signUpForm.controls['countryOfResidence'].value      
       }
-      console.log(userDetails);
+      console.log(userDetails);  // display the user details for debugging purposes
       // send the user details to the server
       this.postService.SendDetails(userDetails).subscribe(
         response =>{
