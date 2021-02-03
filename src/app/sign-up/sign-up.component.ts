@@ -1,7 +1,9 @@
+import { PostService } from './../shared/post.service';
 import { PasswordValidation } from './../shared/confirmed-validator';
 import { escapeIdentifier } from '@angular/compiler/src/output/abstract_emitter';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { conditionallyCreateMapObjectLiteral } from '@angular/compiler/src/render3/view/util';
 
 
 @Component({
@@ -22,7 +24,7 @@ export class SignUpComponent implements OnInit {
   termsAndConditionsErrorMessage = "You must select our terms and conditions first";
 
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
@@ -73,7 +75,20 @@ export class SignUpComponent implements OnInit {
 
     }
     else{
-      console.log(this.signUpForm);
+      //console.log(this.signUpForm);
+      let userDetails = {
+        username: this.signUpForm.controls['userName'].value,
+        email: this.signUpForm.controls['email'].value,
+        password: this.signUpForm.controls['password'].value,
+        countryOfOrigin: this.signUpForm.controls['countryOfResidence'].value      
+      }
+      console.log(userDetails);
+      // send the user details to the server
+      this.postService.SendDetails(userDetails).subscribe(
+        response =>{
+          console.log(response);
+        }
+      )
     }
    
 

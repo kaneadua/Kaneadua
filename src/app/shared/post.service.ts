@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class PostService {
-  url ="http://api.kaneadua.com/";
+  private url ="http://api.kaneadua.com/";
   constructor(private http: HttpClient) { }
 
   // to get the details from the server
@@ -14,6 +14,6 @@ export class PostService {
   }
   // to send post request to the server 
   SendDetails(userdetails:any){
-      return this.http.post(this.url,userdetails);
+      return this.http.post(this.url, JSON.stringify(userdetails));
   }
 }
