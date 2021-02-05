@@ -83,7 +83,7 @@ export class SignUpComponent implements OnInit {
       }
       console.log(userDetails);  // display the user details for debugging purposes
       // send the user details to the server
-      this.postService.SendDetails(this.url, userDetails).subscribe(
+      this.postService.SendUserDetails(this.url, userDetails).subscribe(
         response =>{
           console.log(response);
         },
