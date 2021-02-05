@@ -14,6 +14,7 @@ import { ActivatedRoute, Routes, Router } from '@angular/router';
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
   error: boolean;
+  loader: boolean;
   url: string = "http://api.kaneadua.com/users/add"; // url to send the post request
   userNameErrorMessage = "Username must begin with alphabet and may include numbers or hyphen";
   passwordErroMessage = "Password must be at least 8 characters";
