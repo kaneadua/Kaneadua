@@ -12,6 +12,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
+  error: boolean;
   userNameErrorMessage = "Username must begin with alphabet and may include numbers or hyphen";
   passwordErroMessage = "Password must be at least 8 characters";
   confirmPasswordErroMessage = "Both Passwords does not match";
@@ -93,7 +94,7 @@ export class SignUpComponent implements OnInit {
           }
           else{
             // for all other errors
-            alert("An uxpected error occured. Please try again");
+           this.error = true;
             console.log(error);
           }
           
@@ -101,8 +102,6 @@ export class SignUpComponent implements OnInit {
       )
     }
    
-
-  
   }
 
   onSubmit(){
