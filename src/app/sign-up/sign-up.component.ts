@@ -93,6 +93,7 @@ export class SignUpComponent implements OnInit {
           console.log(response);
           this.route.navigate(['/login']);
           this.loader = false;
+          this.signUpForm.reset();
         },
         (error: Response) => {
           // checks if the user entered an invalid data
