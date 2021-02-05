@@ -13,7 +13,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
   error: boolean;
-  url: string = "http://api.kaneadua.com/users/add";
+  url: string = "http://api.kaneadua.com/users/add"; // url to send the post request
   userNameErrorMessage = "Username must begin with alphabet and may include numbers or hyphen";
   passwordErroMessage = "Password must be at least 8 characters";
   confirmPasswordErroMessage = "Both Passwords does not match";
@@ -23,6 +23,7 @@ export class SignUpComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
+    // creating the signup form 
     this.signUpForm = new FormGroup({
       userName: new FormControl('', [Validators.required, Validators.pattern("")]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -103,8 +104,5 @@ export class SignUpComponent implements OnInit {
    
   }
 
-  onSubmit(){
-    // this is where i put the raw javascript code
-  }
 }
 
