@@ -16,8 +16,6 @@ export class SignUpComponent implements OnInit {
   userNameErrorMessage = "Username must begin with alphabet and may include numbers or hyphen";
   passwordErroMessage = "Password must be at least 8 characters";
   confirmPasswordErroMessage = "Both Passwords does not match";
-  countryOfOriginErrorMessage = "you must select your country of origin";
-  countryOfOriginErrorMessage2 = "Are you trying to create your own country?";
   termsAndConditionsErrorMessage = "You must select our terms and conditions first";
 
 
