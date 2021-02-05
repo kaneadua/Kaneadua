@@ -9,8 +9,8 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   // to get the details from the server
-  getDetails(url: string){
-    return this.http.get(url);
+  getDetails(url: string, username:string){
+    return this.http.get(`${url}/${username}`);
   }
   // to send post request to the server 
   SendDetails(url: string, userdetails:any){
