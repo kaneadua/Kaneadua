@@ -2,6 +2,7 @@ import { PostService } from './../shared/post.service';
 import { PasswordValidation } from './../shared/confirmed-validator';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Routes, Router } from '@angular/router';
 
 
 
@@ -20,7 +21,8 @@ export class SignUpComponent implements OnInit {
   termsAndConditionsErrorMessage = "You must select our terms and conditions first";
 
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService,
+    private route: Router) { }
 
   ngOnInit(): void {
     // creating the signup form 
@@ -86,6 +88,7 @@ export class SignUpComponent implements OnInit {
       this.postService.SendUserDetails(this.url, userDetails).subscribe(
         response =>{
           console.log(response);
+          this.route.navigate(['/login']);
         },
         (error: Response) => {
           // checks if the user entered an invalid data
