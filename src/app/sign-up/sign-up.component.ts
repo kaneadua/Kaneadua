@@ -1,9 +1,8 @@
 import { PostService } from './../shared/post.service';
 import { PasswordValidation } from './../shared/confirmed-validator';
-import { escapeIdentifier } from '@angular/compiler/src/output/abstract_emitter';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { conditionallyCreateMapObjectLiteral } from '@angular/compiler/src/render3/view/util';
+
 
 
 @Component({
@@ -13,9 +12,6 @@ import { conditionallyCreateMapObjectLiteral } from '@angular/compiler/src/rende
 })
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
-  passwordError: boolean;
-  invalidUserName : boolean;
-  submitted: boolean;
   userNameErrorMessage = "Username must begin with alphabet and may include numbers or hyphen";
   passwordErroMessage = "Password must be at least 8 characters";
   confirmPasswordErroMessage = "Both Passwords does not match";
@@ -40,6 +36,7 @@ export class SignUpComponent implements OnInit {
     }, PasswordValidation.MatchPassword);
   }
 
+  // checks if a field name is valid 
   isValidInput(fieldName): boolean {
     return this.signUpForm.controls[fieldName].invalid && //this.signUpForm.controls[fieldName].touched;
        (this.signUpForm.controls[fieldName].dirty || this.signUpForm.controls[fieldName].touched);
@@ -52,6 +49,7 @@ export class SignUpComponent implements OnInit {
   }
 
 
+  // Validate all form fields when the user submits the form
   validateAllFormFields(formGroup: FormGroup){
     Object.keys(formGroup.controls).forEach( field=>{
       const control = formGroup.get(field);
@@ -94,7 +92,8 @@ export class SignUpComponent implements OnInit {
             this.signUpForm.setErrors(error.json());
           }
           else{
-            alert("An uxpected error occured");
+            // for all other errors
+            alert("An uxpected error occured. Please try again");
             console.log(error);
           }
           
