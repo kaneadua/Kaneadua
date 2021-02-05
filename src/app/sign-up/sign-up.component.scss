@@ -288,3 +288,15 @@ button:hover {
         margin-left: 7px;
     }
 }
+
+.submission_error {
+    color: red;
+    border: none;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    text-align: center;
+    background: #ffe6e6;
+    font-size: 11px;
+    width: 100%;
+}
