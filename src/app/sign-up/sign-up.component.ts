@@ -73,11 +73,13 @@ export class SignUpComponent implements OnInit {
       // this.isInvalidInput('countryOfResidence');
       // this.isInvalidInput('newsLetter');
       // this.isInvalidInput('termsAndConditions');
+      this.loader = false;
       this.validateAllFormFields(this.signUpForm);
 
     }
     else{
       //console.log(this.signUpForm);
+      this.loader = true;
       let userDetails = {
         username: this.signUpForm.controls['userName'].value,
         email: this.signUpForm.controls['email'].value,
@@ -90,6 +92,7 @@ export class SignUpComponent implements OnInit {
         response =>{
           console.log(response);
           this.route.navigate(['/login']);
+          this.loader = false;
         },
         (error: Response) => {
           // checks if the user entered an invalid data
@@ -98,6 +101,7 @@ export class SignUpComponent implements OnInit {
           }
           else{
             // for all other errors
+            this.loader = false;
            this.error = true;
             console.log(error);
           }
