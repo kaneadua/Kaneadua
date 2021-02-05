@@ -9,11 +9,11 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   // to get the details from the server
-  getDetails(url: string, username:string){
+  getUserDetails(url: string, username:string){
     return this.http.get(`${url}/${username}`);
   }
   // to send post request to the server 
-  SendDetails(url: string, userdetails:any){
+  SendUserDetails(url: string, userdetails:any){
       return this.http.post(url, JSON.stringify(userdetails));
   }
 }
