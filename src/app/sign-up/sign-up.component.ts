@@ -13,6 +13,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
   error: boolean;
+  url: string = "http://api.kaneadua.com/users/add";
   userNameErrorMessage = "Username must begin with alphabet and may include numbers or hyphen";
   passwordErroMessage = "Password must be at least 8 characters";
   confirmPasswordErroMessage = "Both Passwords does not match";
@@ -81,7 +82,7 @@ export class SignUpComponent implements OnInit {
       }
       console.log(userDetails);  // display the user details for debugging purposes
       // send the user details to the server
-      this.postService.SendDetails(userDetails).subscribe(
+      this.postService.SendDetails(this.url, userDetails).subscribe(
         response =>{
           console.log(response);
         },
