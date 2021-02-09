@@ -28,14 +28,15 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     BrowseGamesComponent,
     FooterComponent,
     UploadGamesComponent,
-    SignUpComponent
+    SignUpComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     SocialLoginModule,
-    
+
 
   ],
   providers: [

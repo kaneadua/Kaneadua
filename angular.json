@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Kaneadua"
+    }
+  },
+  "defaultProject": "Kaneadua",
+  "cli": {
+    "analytics": "b5fdeec4-972c-42ef-a8c8-4f1764ace42d"
+  }
 }
