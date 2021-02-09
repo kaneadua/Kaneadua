@@ -11,11 +11,13 @@ import { RegisterComponent } from './register/register.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { BrowseGamesComponent } from './browse-games/browse-games.component';
 import { FooterComponent } from './footer/footer.component';
-
 import { SocialLoginModule,  SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider} from 'angularx-social-login';
 import { UploadGamesComponent } from './upload-games/upload-games.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { DisableControlDirective } from './disable-control.directive';
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -29,14 +31,14 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     FooterComponent,
     UploadGamesComponent,
     SignUpComponent,
-
+    DisableControlDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     SocialLoginModule,
-
+    HttpClientModule,
 
   ],
   providers: [

@@ -1,4 +1,4 @@
-import {AbstractControl} from '@angular/forms';
+import {AbstractControl, ValidationErrors} from '@angular/forms';
 
 export class PasswordValidation{
 
@@ -16,23 +16,30 @@ export class PasswordValidation{
         }
     }
 
-    // static ValidCountry(AC: AbstractControl){
-    //     let country = AC.get('countryOfResidence').value;
-    //     console.log(country);
-    //     var verify = false;
-    //     let countries:any = document.getElementsByTagName('option');
+    static ValidCountry(AC: AbstractControl): ValidationErrors|null{
+        let country = AC.value;
+        console.log(country);
+        var verify = false;
+        let countries:any = document.getElementsByTagName('option');
 
-    // for (var i = 0; i < countries.length; i++) {
-    //     if (countries[i].value.toLowerCase() === country) {
-    //         verify = true;
-    //         break;
-    //     }
+        for (var i = 0; i < countries.length; i++) {
+            if (countries[i].value.toLowerCase() === country.toLowerCase()) {
+                verify = true;
+                break;
+            }
 
-    // }
+        }
 
-    // if (verify) {
-    //     return null;
-    // }else{
-    //     AC.get('countryOfResidence').setErrors({MatchedCountry: true});
-    // }
+        if (verify) {
+            //return null;
+            AC.get('countryOfResidence').setErrors(null);
+        }
+        // else if (country == '') {
+        //     return {required: true};
+        // }
+        else{
+           // AC.get('countryOfResidence').setErrors({MatchedCountry: true});
+           return {MatchedCountry: true};
+        }
+    }
 }

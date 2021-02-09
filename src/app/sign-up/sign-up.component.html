@@ -5,6 +5,7 @@
             <h2 id="heading">Create An Account</h2>
         </div>
         <form class="form" id="form" [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+            <h5 class="submission_error" *ngIf="error">An uxpected error occured. Please try again</h5>
             <div class="form-control" [ngClass]="isValidInput('userName') ? 'error' :'success'">
                 <label for="username">Username</label>
                 <input type="text" id="username" placeholder="Enter your Username" formControlName='userName'>
@@ -300,8 +301,8 @@
         </datalist>
                 <i class="fa fa-smile-o"></i>
                 <i class="fa fa-frown-o"></i>
-                <p class="errorMessage" *ngIf="signUpForm.controls['countryOfResidence'].errors.required">you must select your country of origin</p>
-                <!-- <p class="errorMessage" *ngIf="signUpForm.controls['countryOfResidence'].errors.MatchedCountry">you must select your country of origin</p> -->
+                <!-- <p class="errorMessage" *ngIf="signUpForm.controls['countryOfResidence'].errors.required">Enter a valid county of origin</p> -->
+                <p class="errorMessage" *ngIf="signUpForm.controls['countryOfResidence'].errors.MatchedCountry">Enter a valid county of origin</p>
             </div>
 
             <div id="nws">
@@ -323,8 +324,10 @@
             </div>
 
 
-            <button type="submit" ng-disabled="false">Create Account</button>
-
+            <!-- <button type="submit">Create Account</button> -->
+            <button type="submit" class="button" [ngClass]="{'button--loading': loader}">
+                <span class="button__text">Create Account</span>
+            </button>
 
         </form>
 
