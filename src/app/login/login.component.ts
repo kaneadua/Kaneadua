@@ -11,8 +11,11 @@ import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-logi
 })
 export class LoginComponent implements OnInit {
   error:boolean = false; // sets the error message to true
-  // login Form 
+  // login Form
   loginForm: FormGroup;
+
+  //Using local storage
+  userLogin;
   constructor(private authService: SocialAuthService) { }
 
   user: SocialUser; // social user object
@@ -28,6 +31,7 @@ export class LoginComponent implements OnInit {
     // get the sign in with google user details
     this.authService.authState.subscribe((user) => {
       this.user = user;
+      this.userLogin= user;
       this.loggedIn = (user != null);
       console.log(this.user);
       console.log(this.loggedIn);
@@ -37,6 +41,7 @@ export class LoginComponent implements OnInit {
   // function to submit the user details to the server
   onSubmit(){
     if(this.loginForm.valid){
+      localStorage.setItem("user", JSON.stringify(this.userLogin));
       console.log(this.loginForm); // console logs the login forms
       console.log(this.loginForm.value)
     }
@@ -44,19 +49,24 @@ export class LoginComponent implements OnInit {
     else{
       this.error = true;
     }
-    
+
 
 
   }
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    localStorage.setItem("user", JSON.stringify(this.userLogin));
+
   }
 
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    localStorage.setItem("user", JSON.stringify(this.userLogin));
+
   }
 
   signOut(): void {
+    localStorage.clear();
     this.authService.signOut();
   }
 
