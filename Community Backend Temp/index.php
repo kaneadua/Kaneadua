@@ -8,7 +8,7 @@ $app = new Leaf\App;
 $app->get('/', function() use($app) {
     // response is initialized with leaf
     $app->response()->json([
-        "message" => "Welcome to Ghana"
+        "message" => "You are looking at the community page server!!"
     ]);
 });
 
