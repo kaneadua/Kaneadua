@@ -23,4 +23,4 @@ $app->get("/test", function() use($app) {
 $app->set404();
 
 // run the defined routes
-$app->run(); //added a few comments to line 26
+$app->run();
