@@ -22,13 +22,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf75d964-9a8c-48d3-b690-accfea04f0ae" name="Default Changelist" comment="" />
+    <list default="true" id="bf75d964-9a8c-48d3-b690-accfea04f0ae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -87,6 +92,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -110,6 +116,8 @@
       <option name="presentableId" value="Default" />
       <updated>1615145880868</updated>
       <workItem from="1615145881982" duration="782000" />
+      <workItem from="1615157609881" duration="5000" />
+      <workItem from="1615157629288" duration="392000" />
     </task>
     <servers />
   </component>
@@ -126,16 +134,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="222" y="15" key="#CLI_Interpreters" timestamp="1615145986406">
+    <state x="222" y="15" key="#CLI_Interpreters" timestamp="1615157840573">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="222" y="15" key="#CLI_Interpreters/0.0.1280.720@0.0.1280.720" timestamp="1615145986406" />
-    <state x="349" y="3" key="#PHP" timestamp="1615145988856">
+    <state x="222" y="15" key="#CLI_Interpreters/0.0.1280.720@0.0.1280.720" timestamp="1615157840573" />
+    <state x="349" y="3" key="#PHP" timestamp="1615157843870">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="349" y="3" key="#PHP/0.0.1280.720@0.0.1280.720" timestamp="1615145988856" />
+    <state x="349" y="3" key="#PHP/0.0.1280.720@0.0.1280.720" timestamp="1615157843870" />
     <state x="421" y="115" key="FileChooserDialogImpl" timestamp="1615146434271">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
@@ -156,9 +165,9 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1615146671604" />
-    <state x="-142" y="10" width="1158" height="710" key="SettingsEditor" timestamp="1615146480321">
+    <state x="38" y="10" width="1158" height="710" key="SettingsEditor" timestamp="1615158062365">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="-142" y="10" width="1158" height="710" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1615146480321" />
+    <state x="38" y="10" width="1158" height="710" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1615158062365" />
   </component>
 </project>
