@@ -22,7 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf75d964-9a8c-48d3-b690-accfea04f0ae" name="Default Changelist" comment="added some lines">
+    <list default="true" id="bf75d964-9a8c-48d3-b690-accfea04f0ae" name="Default Changelist" comment="removed the lines">
+      <change afterPath="$PROJECT_DIR$/Controllers/MasterController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
@@ -39,11 +41,19 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="composer.json" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/kaneadua/Kaneadua" />
+      </set>
+    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.0">
     <include_path>
@@ -82,12 +92,15 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1pRVROjKQRyTmeMg4FEKR957qLb" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -115,7 +128,7 @@
       <updated>1615145880868</updated>
       <workItem from="1615145881982" duration="782000" />
       <workItem from="1615157609881" duration="5000" />
-      <workItem from="1615157629288" duration="1044000" />
+      <workItem from="1615157629288" duration="12729000" />
     </task>
     <task id="LOCAL-00001" summary="added some lines">
       <created>1615158247062</created>
@@ -124,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615158247062</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="removed the lines">
+      <created>1615158832797</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615158832797</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,7 +164,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added some lines" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some lines" />
+    <MESSAGE value="removed the lines" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed the lines" />
   </component>
   <component name="WindowStateProjectService">
     <state x="222" y="15" key="#CLI_Interpreters" timestamp="1615157840573">
@@ -175,13 +196,25 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1615146671604" />
+    <state x="329" y="83" key="NewPhpClassDialog" timestamp="1615166930243">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="329" y="83" key="NewPhpClassDialog/0.0.1280.720@0.0.1280.720" timestamp="1615166930243" />
+    <state x="477" y="284" key="NewPhpFileDialog" timestamp="1615193950441">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="477" y="284" key="NewPhpFileDialog/0.0.1280.720@0.0.1280.720" timestamp="1615193950441" />
     <state x="38" y="10" width="1158" height="710" key="SettingsEditor" timestamp="1615158062365">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="38" y="10" width="1158" height="710" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1615158062365" />
-    <state x="233" y="93" key="Vcs.Push.Dialog.v2" timestamp="1615158396069">
+    <state x="233" y="93" key="Vcs.Push.Dialog.v2" timestamp="1615158982938">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="233" y="93" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1615158396069" />
+    <state x="233" y="93" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1615158982938" />
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1615197874148">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1615197874148" />
   </component>
 </project>
