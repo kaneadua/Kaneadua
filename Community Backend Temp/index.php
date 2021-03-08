@@ -30,9 +30,13 @@ $app->get("/test", function() use($app) {
     ]);
 });
 
-$app->set404( function () use ($app){
+
+$app->get("/",function (){
     header("LOCATION: ./homepage/index.html");
 });
+
+
+$app->set404();
 
 // run the defined routes
 $app->run();
