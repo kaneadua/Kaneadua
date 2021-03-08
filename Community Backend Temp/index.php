@@ -20,14 +20,23 @@ $app->get('/general-discussion', function() use ($db_server,$app){
 
 });
 
-/// retrieve all the topics posted
-$app->get('/retrieve-topics', function() use ($db_server,$app){
+/// retrieve or filter all the topics posted
+$app->match("GET|POST",'/retrieve-topics', function() use ($db_server,$app){
+
+    $search_string = $app->request()->get("key");
 
   $app->response()->json([
-      "Topics"=>MasterController::retrieve_topics($db_server)
+      "Topics"=>MasterController::retrieve_or_filter_topics($db_server,$search_string)
   ]);
 
+
+    //echo $app->request()->getHostWithPort();
+
+  //will come back to this to retrieve them in batches
+
 });
+
+
 
 
 //$app->get("/test", function() use($app) {

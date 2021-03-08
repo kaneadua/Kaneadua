@@ -22,12 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf75d964-9a8c-48d3-b690-accfea04f0ae" name="Default Changelist" comment="separated the homepage from the 404 error">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/date.php" afterDir="false" />
+    <list default="true" id="bf75d964-9a8c-48d3-b690-accfea04f0ae" name="Default Changelist" comment="finished with the retrieval of the topics">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/MasterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MasterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +131,7 @@
       <updated>1615145880868</updated>
       <workItem from="1615145881982" duration="782000" />
       <workItem from="1615157609881" duration="5000" />
-      <workItem from="1615157629288" duration="24579000" />
+      <workItem from="1615157629288" duration="32781000" />
     </task>
     <task id="LOCAL-00001" summary="added some lines">
       <created>1615158247062</created>
@@ -164,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615205074501</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="finished with the retrieval of the topics">
+      <created>1615218518882</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1615218518882</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +198,8 @@
     <MESSAGE value="removed the lines" />
     <MESSAGE value="General topics count sorted out" />
     <MESSAGE value="separated the homepage from the 404 error" />
-    <option name="LAST_COMMIT_MESSAGE" value="separated the homepage from the 404 error" />
+    <MESSAGE value="finished with the retrieval of the topics" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished with the retrieval of the topics" />
   </component>
   <component name="WindowStateProjectService">
     <state x="222" y="15" key="#CLI_Interpreters" timestamp="1615157840573">
@@ -209,10 +214,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="80" y="202" key="#SQL_Dialects/0.0.1280.720@0.0.1280.720" timestamp="1615210681047" />
-    <state x="233" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615210755606">
+    <state x="233" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615224575903">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="233" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.720@0.0.1280.720" timestamp="1615210755606" />
+    <state x="233" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.720@0.0.1280.720" timestamp="1615224575903" />
     <state x="421" y="115" key="FileChooserDialogImpl" timestamp="1615146434271">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
@@ -245,13 +250,13 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="38" y="10" width="1158" height="710" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1615158062365" />
-    <state x="233" y="93" key="Vcs.Push.Dialog.v2" timestamp="1615158982938">
+    <state x="233" y="93" key="Vcs.Push.Dialog.v2" timestamp="1615218710285">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="233" y="93" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1615158982938" />
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1615197874148">
+    <state x="233" y="93" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1615218710285" />
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1615228253469">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1615197874148" />
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1615228253469" />
   </component>
 </project>

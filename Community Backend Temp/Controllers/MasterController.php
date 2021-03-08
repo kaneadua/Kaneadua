@@ -13,18 +13,20 @@ class MasterController {
 
     }
 
-    public static function  retrieve_topics($db){
+    public static function  retrieve_or_filter_topics($db,$search_string){
 
 
             $NUMBER_OF_REPLIES=null;
             $REPLYER=null;
             $DATE_REPLIED=null;
 
-
             $query = "SELECT * FROM topic ORDER BY id DESC";
-            $result = $db->query($query);
-            $count = $result->num_rows;
-            $topics=array();
+
+            if($search_string != "") $query = "SELECT * FROM topic WHERE MATCH(author,title,details) AGAINST (\"$search_string\" IN BOOLEAN MODE) ORDER BY id DESC";
+
+           $result = $db->query($query);
+           $count = $result->num_rows;
+           $topics=array();
 
 
             for($j=0;$j<$count;++$j)
@@ -69,4 +71,5 @@ class MasterController {
             return $topics;
 
         }
+
     }
