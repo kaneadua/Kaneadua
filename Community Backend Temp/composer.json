@@ -1,5 +1,6 @@
 {
     "require": {
-        "leafs/leaf": "^2.4"
+        "leafs/leaf": "^2.4",
+      "ext-mysqli": "*"
     }
 }

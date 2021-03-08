@@ -1,7 +1,7 @@
 <?php
 // import composer's autoloader
-require __DIR__ . "/vendor/autoload.php";
-require "Controllers/MasterController.php";
+require_once __DIR__ . "/vendor/autoload.php";
+require_once "Controllers/MasterController.php";
 
 // initialise leaf
 $app = new Leaf\App;
@@ -20,15 +20,23 @@ $app->get('/general-discussion', function() use ($db_server,$app){
 
 });
 
+/// retrieve all the topics posted
+$app->get('/retrieve-topics', function() use ($db_server,$app){
 
+  $app->response()->json([
+      "Topics"=>MasterController::retrieve_topics($db_server)
+  ]);
 
-$app->get("/test", function() use($app) {
-    $name = $app->request()->get("name");    ///will use this for extracting id's and things
-
-    $app->response()->json([
-        "name" => $name
-    ]);
 });
+
+
+//$app->get("/test", function() use($app) {
+//    $name = $app->request()->get("name");    ///will use this for extracting id's and things
+//
+//    $app->response()->json([
+//        "name" => $name
+//    ]);
+//});
 
 
 $app->get("/",function (){
