@@ -59,6 +59,19 @@ $app->get("/discussion-page",function () use ($app,$db_server){
 
 });
 
+//replying to a topic
+$app->post("/discussion-page",function () use ($app,$db_server){
+
+ $replyer = $app->request()->get("replyer");
+ $title = $app->request()->get("title");
+ $message = $app->request()->get("message");
+ $image = $app->request()->files("image");
+ $image += ["baseURl" =>$app->request()->getUrl()];
+
+ $app->response()->json(["status"=>MasterController::reply_to_topic($db_server,$replyer,$title,$message,$image)]);
+
+});
+
 
 //update the details of the topic
 $app->put("/update", function() use($app,$db_server) {
