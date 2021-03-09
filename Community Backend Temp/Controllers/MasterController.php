@@ -49,6 +49,7 @@ class MasterController {
                     $result2->data_seek($number_of_replies - 1);
                     $row= $result2->fetch_array(MYSQLI_ASSOC);
 
+
                     $REPLYER = $row['replyer'] ; //////latest replyer
                     $DATE_REPLIED =$row['date_replied'];
                     $DATE_REPLIED=ago($DATE_REPLIED); //replied date
@@ -72,4 +73,51 @@ class MasterController {
 
         }
 
+    public static function  insert_topics($db,$author,$title,$details,$image){
+
+        $image_name=$image["name"];  ///no image is uploaded if name is empty
+        $image_size=$image["size"];
+        $image_type=$image["type"];
+        $baseUrl=$image["baseURl"];
+
+        $IMAGE=""; //image url to be inserted into the database
+
+        if(!($image_name == "" || $image_size == 0 )) {  //If an image is uploaded execute this block
+
+        ///file checking is taking place here
+        if($image_size/1024 > "2048"){
+            echo "Image size must not be greater than 2MB";
+            exit();
+        }
+
+        if($image_type != "image/png"   &&
+            $image_type != "image/gif"  &&
+            $image_type != "image/jpg"   &&
+            $image_type != "image/jpeg"
+        ) {
+            echo "Sorry this file is not supported";
+            exit();
+        }
+
+
+        $uploaded_file="ImageUploads/".date("Y_m_d_H_i_s").$image_name;
+
+        if(is_uploaded_file($image["tmp_name"])){
+            if(!move_uploaded_file($image["tmp_name"],$uploaded_file)){
+                echo "Something went wrong";
+                exit();
+            }
+        }
+
+        $IMAGE = $baseUrl."/".$uploaded_file;
+
+        }
+
+        //insert values into the table
+        $query="INSERT INTO topic(author,title,details,image) VALUES(\"$author\",\"$title\",\"$details\",\"$IMAGE\")";
+
+        if($db->query($query))
+            return "OK";
+        else return "ERROR";
+    }
     }

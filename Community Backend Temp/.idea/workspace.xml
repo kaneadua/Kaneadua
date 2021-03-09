@@ -22,7 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf75d964-9a8c-48d3-b690-accfea04f0ae" name="Default Changelist" comment="finished with the retrieval of the topics">
+    <list default="true" id="bf75d964-9a8c-48d3-b690-accfea04f0ae" name="Default Changelist" comment="added the search topics functionality">
+      <change afterPath="$PROJECT_DIR$/ImageUploads/2021_03_09_03_04_51fbec55b1fa831ed44407b045f80d21f19dcea139_hq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageUploads/2021_03_09_03_08_55George 20190410_122233.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/MasterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MasterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
@@ -131,7 +133,7 @@
       <updated>1615145880868</updated>
       <workItem from="1615145881982" duration="782000" />
       <workItem from="1615157609881" duration="5000" />
-      <workItem from="1615157629288" duration="32781000" />
+      <workItem from="1615157629288" duration="47747000" />
     </task>
     <task id="LOCAL-00001" summary="added some lines">
       <created>1615158247062</created>
@@ -168,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615218518882</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added the search topics functionality">
+      <created>1615230993793</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1615230993793</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,7 +208,8 @@
     <MESSAGE value="General topics count sorted out" />
     <MESSAGE value="separated the homepage from the 404 error" />
     <MESSAGE value="finished with the retrieval of the topics" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished with the retrieval of the topics" />
+    <MESSAGE value="added the search topics functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the search topics functionality" />
   </component>
   <component name="WindowStateProjectService">
     <state x="222" y="15" key="#CLI_Interpreters" timestamp="1615157840573">
@@ -250,10 +260,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="38" y="10" width="1158" height="710" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1615158062365" />
-    <state x="233" y="93" key="Vcs.Push.Dialog.v2" timestamp="1615218710285">
+    <state x="233" y="93" key="Vcs.Push.Dialog.v2" timestamp="1615231112200">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="233" y="93" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1615218710285" />
+    <state x="233" y="93" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1615231112200" />
     <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1615228253469">
       <screen x="0" y="0" width="1280" height="720" />
     </state>

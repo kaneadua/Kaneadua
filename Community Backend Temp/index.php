@@ -28,16 +28,22 @@ $app->match("GET|POST",'/retrieve-topics', function() use ($db_server,$app){
   $app->response()->json([
       "Topics"=>MasterController::retrieve_or_filter_topics($db_server,$search_string)
   ]);
-
-
-    //echo $app->request()->getHostWithPort();
-
-  //will come back to this to retrieve them in batches
-
+      //echo $app->request()->getHostWithPort();
+    ////will come back to this to retrieve them in batches
 });
 
 
+//insert a new posted topic
+$app->post('/insert',function () use($db_server,$app) {
+    $author = $app->request()->get("author");
+    $title = $app->request()->get("title");
+    $details = $app->request()->get("details");
+    $image =  $app->request()->files("image");
+    $image += ["baseURl" =>$app->request()->getUrl()];
 
+    $app->response()->json(["status"=>MasterController::insert_topics($db_server,$author,$title,$details,$image)]);
+
+});
 
 //$app->get("/test", function() use($app) {
 //    $name = $app->request()->get("name");    ///will use this for extracting id's and things
