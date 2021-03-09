@@ -43,6 +43,8 @@ class MasterController {
                 $query = "SELECT * FROM reply WHERE title = \"$title\"";
                 $result2 = $db->query($query);
                 $number_of_replies = $result2->num_rows;
+                $NUMBER_OF_REPLIES = $number_of_replies;
+
 
                 if($number_of_replies != 0)
                 {
@@ -65,7 +67,7 @@ class MasterController {
                     'title'=>$title,
                     'author'=>$author,
                     'number_of_replies'=>$NUMBER_OF_REPLIES,
-                    'replyer'=>$REPLYER,
+                    'lastest_replyer'=>$REPLYER,
                     'date_replied'=>$DATE_REPLIED
                 );
             }
@@ -102,12 +104,21 @@ class MasterController {
 
         $uploaded_file="ImageUploads/".date("Y_m_d_H_i_s").$image_name;
 
+
         if(is_uploaded_file($image["tmp_name"])){
             if(!move_uploaded_file($image["tmp_name"],$uploaded_file)){
                 echo "Something went wrong";
                 exit();
             }
         }
+
+//        $info = getimagesize($uploaded_file);
+//        if($info["mime"]=="image/jpeg") $compressed= imagecreatefromjpeg($uploaded_file);
+//         elseif($info["mime"]=="image/gif") $compressed= imagecreatefromgif($uploaded_file);
+//        elseif($info["mime"]=="image/png") $compressed= imagecreatefromgif($uploaded_file);
+//
+//        imagejpeg($compressed,$uploaded_file,50);
+
 
         $IMAGE = $baseUrl."/".$uploaded_file;
 
@@ -120,4 +131,10 @@ class MasterController {
             return "OK";
         else return "ERROR";
     }
+
+    public static function  update_topic($db,$id,$details,$image){
+
+        return "OK";
     }
+}
+

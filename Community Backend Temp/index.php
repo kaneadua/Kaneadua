@@ -41,16 +41,20 @@ $app->post('/insert',function () use($db_server,$app) {
     $image =  $app->request()->files("image");
     $image += ["baseURl" =>$app->request()->getUrl()];
 
+
     $app->response()->json(["status"=>MasterController::insert_topics($db_server,$author,$title,$details,$image)]);
 
 });
 
-$app->get("/test", function() use($app) {
-    $name = $app->request()->get("name");    ///will use this for extracting id's and things
 
-    $app->response()->json([
-        "name" => $name
-    ]);
+//update the details of the topic
+$app->put("/update", function() use($app,$db_server) {
+    $id = $app->request()->get("id");
+    $details = $app->request()->get("details");
+    $image =  $app->request()->files("image");
+    $image += ["baseURl" =>$app->request()->getUrl()];
+
+    $app->response()->json(["status"=>MasterController::update_topic($db_server,$id,$details,$image)]);
 });
 
 
