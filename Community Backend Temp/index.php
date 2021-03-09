@@ -45,13 +45,13 @@ $app->post('/insert',function () use($db_server,$app) {
 
 });
 
-//$app->get("/test", function() use($app) {
-//    $name = $app->request()->get("name");    ///will use this for extracting id's and things
-//
-//    $app->response()->json([
-//        "name" => $name
-//    ]);
-//});
+$app->get("/test", function() use($app) {
+    $name = $app->request()->get("name");    ///will use this for extracting id's and things
+
+    $app->response()->json([
+        "name" => $name
+    ]);
+});
 
 
 $app->get("/",function (){
