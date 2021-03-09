@@ -28,7 +28,7 @@ $app->match("GET|POST",'/retrieve-topics', function() use ($db_server,$app){
   $app->response()->json([
       "Topics"=>MasterController::retrieve_or_filter_topics($db_server,$search_string)
   ]);
-      //echo $app->request()->getHostWithPort();
+
     ////will come back to this to retrieve them in batches
 });
 
@@ -43,6 +43,19 @@ $app->post('/insert',function () use($db_server,$app) {
 
 
     $app->response()->json(["status"=>MasterController::insert_topics($db_server,$author,$title,$details,$image)]);
+
+});
+
+//loading a particular topic to start a discussion
+$app->get("/discussion-page",function () use ($app,$db_server){
+    $id = $app->request()->get("id");
+
+    $corresponding_topic=MasterController::start_discussion_topic($db_server,$id)["title"];
+
+    $app->response()->json([
+       "discussion-topic"=>MasterController::start_discussion_topic($db_server,$id),
+       "replies to the topic"=>MasterController::discussion_topic_replies($db_server,$corresponding_topic)
+    ]);
 
 });
 

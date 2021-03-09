@@ -67,7 +67,7 @@ class MasterController {
                     'title'=>$title,
                     'author'=>$author,
                     'number_of_replies'=>$NUMBER_OF_REPLIES,
-                    'lastest_replyer'=>$REPLYER,
+                    'latest_replyer'=>$REPLYER,
                     'date_replied'=>$DATE_REPLIED
                 );
             }
@@ -130,6 +130,62 @@ class MasterController {
         if($db->query($query))
             return "OK";
         else return "ERROR";
+    }
+
+    public static function  start_discussion_topic($db,$id){
+
+        $query = "SELECT * FROM topic WHERE id = \"$id\"";
+        $result = $db->query($query);
+        $result->data_seek(0);
+        $row = $result->fetch_array(MYSQLI_ASSOC);
+
+        $title = $row['title'];
+        $author= "Topic posted by ".$row['author'];
+        $details=$row['details'];
+        $date_created=ago($row['date_created']);
+
+        $query = "SELECT * FROM reply WHERE title = \"$title\"";
+        $result2 = $db->query($query);
+        $number_of_replies = $result2->num_rows;
+        $number_of_replies.= $number_of_replies > 1 ? " replies": " reply";
+
+
+        return array("id"=>$id,
+                     "title"=>$title,
+                     "author"=>$author,
+                     "details"=>$details,
+                     "date_created"=>$date_created,
+                     "number_of_replies"=>$number_of_replies
+                    );
+    }
+
+    public static function  discussion_topic_replies($db,$title){
+
+        $replies = array(); //will hold all the replies together
+
+        $query = "SELECT * FROM reply WHERE title = \"$title\" ORDER BY id DESC";
+        $result = $db->query($query);
+        $count = $result->num_rows;
+
+        for($j=0;$j<$count;$j++)
+        {
+            $result->data_seek($j);
+            $row = $result->fetch_array(MYSQLI_ASSOC);
+            $message = $row['message'];  /// replied message
+            $replyer = $row['replyer'];  /// replier
+            $date_replied= ago($row['date_replied']);  ///replied date
+            $image = $row['image'];   /// image should be included in case someone uploaded it as a reply
+
+            $replies[]=array(
+                'message'=>$message,
+                'replier'=>$replyer,
+                'image'=>$image,
+                'date_replied'=>$date_replied
+            );
+
+        }
+
+        return $replies;
     }
 
     public static function  update_topic($db,$id,$details,$image){
