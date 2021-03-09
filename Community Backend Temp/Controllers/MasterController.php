@@ -77,6 +77,17 @@ class MasterController {
 
     public static function  insert_topics($db,$author,$title,$details,$image){
 
+        //check to verify if topic isn't already posted
+        $query = "SELECT title FROM topic WHERE title = \"$title\"";
+        $result = $db->query($query);
+        $row = $result->num_rows;
+
+        if($row){
+            echo json_encode("Topic already exist!!");
+            exit();
+        }
+
+
         $image_name=$image["name"];  ///no image is uploaded if name is empty
         $image_size=$image["size"];
         $image_type=$image["type"];
