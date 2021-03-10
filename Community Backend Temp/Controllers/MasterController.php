@@ -232,6 +232,46 @@ class MasterController {
       else return "ERROR";
     }
 
+    public static function  delete_topic($title,$db,$baseUrl){
+
+        $query = "SELECT image FROM topic WHERE title = \"$title\"";
+        $result = $db->query($query);
+        $result->data_seek(0);
+        $row = $result->fetch_array(MYSQLI_ASSOC);
+
+        $image = $row['image']; //returned image is in the format: https://web.com/image.jpg
+
+        $query="DELETE FROM topic WHERE title=\"$title\"";
+        $result = $db->query($query);  //delete the topic from the database
+
+        if($image){ //if user uploaded an image
+            $image=substr($image,strlen($baseUrl)+1); ///strip out the https://web.com from it
+            unlink($image);  //delete the posted images from the filesystem
+        }
+
+   ////delete all replies along with their images associated with the topic
+        $query2 = "SELECT image FROM reply WHERE title = \"$title\"";
+        $result2 = $db->query($query2);
+        $count = $result2->num_rows;
+
+        for ($j=0;$j<$count;$j++){
+            $result2->data_seek($j);
+            $row = $result2->fetch_array(MYSQLI_ASSOC);
+            $image = $row['image']; //returned image is in the format: https://web.com/image.jpg
+
+            $query2="DELETE FROM reply WHERE title=\"$title\"";
+            $result2 = $db->query($query2);  //delete the reply from the database
+
+            if($image){ //if replyer uploaded an image
+                $image=substr($image,strlen($baseUrl)+1); ///strip out the https://web.com from it
+                unlink($image);  //delete the posted images from the filesystem
+            }
+        }
+
+        if($result && $result2) return "OK";
+            else return "ERROR";
+    }
+
 
 }
 

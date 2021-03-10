@@ -91,6 +91,17 @@ $app->post("/update", function() use($app,$db_server) {
     $app->response()->json(["status"=>MasterController::update_topic($db_server,$id,$details,$image)]);
 });
 
+//delete a topic
+$app->delete("/delete",function () use($app,$db_server){
+    $title=$app->request()->get("title");
+    $baseUrl=$app->request()->getUrl();
+
+    $app->response()->json([
+        "status"=>MasterController::delete_topic($title,$db_server,$baseUrl)
+    ]);
+});
+
+
 
 $app->get("/",function (){
     header("LOCATION: ./homepage/index.html");

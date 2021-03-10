@@ -22,11 +22,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf75d964-9a8c-48d3-b690-accfea04f0ae" name="Default Changelist" comment="added the search topics functionality">
-      <change afterPath="$PROJECT_DIR$/ImageUploads/2021_03_09_03_04_51fbec55b1fa831ed44407b045f80d21f19dcea139_hq.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageUploads/2021_03_09_03_08_55George 20190410_122233.jpg" afterDir="false" />
+    <list default="true" id="bf75d964-9a8c-48d3-b690-accfea04f0ae" name="Default Changelist" comment="members can now update their topics already posted">
+      <change afterPath="$PROJECT_DIR$/ImageUploads/2021_03_10_23_43_373d-wide-wallpaper-1920x1080-017.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/MasterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MasterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageUploads/2021_03_10_12_44_493D-Comic-joker-wallpaper-hd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageUploads/2021_03_10_12_44_593D-Comic-joker-wallpaper-hd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageUploads/2021_03_10_12_45_063D-Comic-joker-wallpaper-hd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageUploads/2021_03_10_12_45_103D-Comic-joker-wallpaper-hd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageUploads/2021_03_10_13_08_443d-wide-wallpaper015.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +40,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -133,7 +139,8 @@
       <updated>1615145880868</updated>
       <workItem from="1615145881982" duration="782000" />
       <workItem from="1615157609881" duration="5000" />
-      <workItem from="1615157629288" duration="47747000" />
+      <workItem from="1615157629288" duration="76825000" />
+      <workItem from="1615394600943" duration="8490000" />
     </task>
     <task id="LOCAL-00001" summary="added some lines">
       <created>1615158247062</created>
@@ -177,7 +184,56 @@
       <option name="project" value="LOCAL" />
       <updated>1615230993793</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="members can now post a topic and may upload one image">
+      <created>1615255896373</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1615255896373</updated>
+    </task>
+    <task id="LOCAL-00008" summary="just testing something">
+      <created>1615256439230</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1615256439230</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixed the problem with reply counts">
+      <created>1615300924944</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1615300924944</updated>
+    </task>
+    <task id="LOCAL-00010" summary="loading a particular topic to start a discussion done">
+      <created>1615304919515</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1615304919515</updated>
+    </task>
+    <task id="LOCAL-00011" summary="completed with the replying to a topic">
+      <created>1615308432850</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1615308432850</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fix problem of duplicated topics">
+      <created>1615309720358</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1615309720358</updated>
+    </task>
+    <task id="LOCAL-00013" summary="members can now update their topics already posted">
+      <created>1615378519538</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1615378519538</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +265,15 @@
     <MESSAGE value="separated the homepage from the 404 error" />
     <MESSAGE value="finished with the retrieval of the topics" />
     <MESSAGE value="added the search topics functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the search topics functionality" />
+    <MESSAGE value="members can now post a topic and may upload one image" />
+    <MESSAGE value="just testing something" />
+    <MESSAGE value="fixed the problem with reply counts" />
+    <MESSAGE value="loading a particular topic to start a discussion done" />
+    <MESSAGE value="completed with the replying to a topic" />
+    <MESSAGE value="fix problem of duplicated topics" />
+    <MESSAGE value="members can now update their topic" />
+    <MESSAGE value="members can now update their topics already posted" />
+    <option name="LAST_COMMIT_MESSAGE" value="members can now update their topics already posted" />
   </component>
   <component name="WindowStateProjectService">
     <state x="222" y="15" key="#CLI_Interpreters" timestamp="1615157840573">
@@ -228,6 +292,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="233" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.720@0.0.1280.720" timestamp="1615224575903" />
+    <state x="418" y="273" key="ComposerInitDialogKey" timestamp="1615375950903">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="418" y="273" key="ComposerInitDialogKey/0.0.1280.720@0.0.1280.720" timestamp="1615375950903" />
     <state x="421" y="115" key="FileChooserDialogImpl" timestamp="1615146434271">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
@@ -260,10 +328,14 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="38" y="10" width="1158" height="710" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1615158062365" />
-    <state x="233" y="93" key="Vcs.Push.Dialog.v2" timestamp="1615231112200">
+    <state x="233" y="93" key="Vcs.Push.Dialog.v2" timestamp="1615378627998">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="233" y="93" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1615231112200" />
+    <state x="233" y="93" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1615378627998" />
+    <state x="297" y="161" key="run.anything.popup" timestamp="1615414260873">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="297" y="161" key="run.anything.popup/0.0.1280.720@0.0.1280.720" timestamp="1615414260873" />
     <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1615228253469">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
