@@ -2,6 +2,7 @@
     "require": {
         "leafs/leaf": "^2.4",
       "ext-mysqli": "*",
-      "ext-gd": "*"
+      "ext-gd": "*",
+      "ext-json": "*"
     }
 }

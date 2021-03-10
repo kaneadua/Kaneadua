@@ -73,8 +73,16 @@ $app->post("/discussion-page",function () use ($app,$db_server){
 });
 
 
+//edit topic button pressed
+$app->post("/edit",function () use ($app,$db_server){
+    $id = $app->request()->get("id");
+    $app->response()->json([
+       "topic to edit "=>MasterController::start_discussion_topic($db_server,$id)
+    ]);
+});
+
 //update the details of the topic
-$app->put("/update", function() use($app,$db_server) {
+$app->post("/update", function() use($app,$db_server) {
     $id = $app->request()->get("id");
     $details = $app->request()->get("details");
     $image =  $app->request()->files("image");

@@ -4,6 +4,59 @@ require_once "date.php";
 
 class MasterController {
 
+    private static function processedImage($image)
+    {
+        $image_name = $image["name"];  ///no image is uploaded if name is empty
+        $image_size = $image["size"];
+        $image_type = $image["type"];
+        $baseUrl = $image["baseURl"];
+
+
+        if (!($image_name == "" || $image_size == 0)) {  //If an image is uploaded execute this block
+
+            ///file checking is taking place here
+            if ($image_size / 1024 > "2048") {
+                echo "Image size must not be greater than 2MB";
+                exit();
+            }
+
+            if ($image_type != "image/png" &&
+                $image_type != "image/gif" &&
+                $image_type != "image/jpg" &&
+                $image_type != "image/jpeg"
+            ) {
+                echo "Sorry this file is not supported";
+                exit();
+            }
+
+
+            $uploaded_file = "ImageUploads/" . date("Y_m_d_H_i_s") . $image_name;
+
+
+            if (is_uploaded_file($image["tmp_name"])) {
+                if (!move_uploaded_file($image["tmp_name"], $uploaded_file)) {
+                    echo "Something went wrong";
+                    exit();
+                }
+            }
+
+//        $info = getimagesize($uploaded_file);
+//        if($info["mime"]=="image/jpeg") $compressed= imagecreatefromjpeg($uploaded_file);
+//         elseif($info["mime"]=="image/gif") $compressed= imagecreatefromgif($uploaded_file);
+//        elseif($info["mime"]=="image/png") $compressed= imagecreatefromgif($uploaded_file);
+//
+//        imagejpeg($compressed,$uploaded_file,50);
+
+
+            return $baseUrl . "/" . $uploaded_file; //final location of image returned to database
+
+
+
+        }
+
+        return "";  //return empty string if no image was uploaded
+    }
+
     public static function display_topics_count($db){
 
         $query = 'SELECT * FROM topic';
@@ -58,8 +111,8 @@ class MasterController {
                     $NUMBER_OF_REPLIES.= $number_of_replies > 1 ? " replies": " reply";  ///number of replies
                 } else{
                     $REPLYER = "not replied yet";
-                    $NUMBER_OF_REPLIES = "zero replies";
-                    $DATE_REPLIED = "Unavailable";
+                    $NUMBER_OF_REPLIES = "0 replies";
+                    $DATE_REPLIED = "Not Available";
                 }
 
                 $topics[]=array(
@@ -87,53 +140,7 @@ class MasterController {
             exit();
         }
 
-
-        $image_name=$image["name"];  ///no image is uploaded if name is empty
-        $image_size=$image["size"];
-        $image_type=$image["type"];
-        $baseUrl=$image["baseURl"];
-
-        $IMAGE=""; //image url to be inserted into the database
-
-        if(!($image_name == "" || $image_size == 0 )) {  //If an image is uploaded execute this block
-
-        ///file checking is taking place here
-        if($image_size/1024 > "2048"){
-            echo "Image size must not be greater than 2MB";
-            exit();
-        }
-
-        if($image_type != "image/png"   &&
-            $image_type != "image/gif"  &&
-            $image_type != "image/jpg"   &&
-            $image_type != "image/jpeg"
-        ) {
-            echo "Sorry this file is not supported";
-            exit();
-        }
-
-
-        $uploaded_file="ImageUploads/".date("Y_m_d_H_i_s").$image_name;
-
-
-        if(is_uploaded_file($image["tmp_name"])){
-            if(!move_uploaded_file($image["tmp_name"],$uploaded_file)){
-                echo "Something went wrong";
-                exit();
-            }
-        }
-
-//        $info = getimagesize($uploaded_file);
-//        if($info["mime"]=="image/jpeg") $compressed= imagecreatefromjpeg($uploaded_file);
-//         elseif($info["mime"]=="image/gif") $compressed= imagecreatefromgif($uploaded_file);
-//        elseif($info["mime"]=="image/png") $compressed= imagecreatefromgif($uploaded_file);
-//
-//        imagejpeg($compressed,$uploaded_file,50);
-
-
-        $IMAGE = $baseUrl."/".$uploaded_file;
-
-        }
+        $IMAGE = MasterController::processedImage($image);
 
         //insert values into the table
         $query="INSERT INTO topic(author,title,details,image) VALUES(\"$author\",\"$title\",\"$details\",\"$IMAGE\")";
@@ -154,6 +161,7 @@ class MasterController {
         $author= "Topic posted by ".$row['author'];
         $details=$row['details'];
         $date_created=ago($row['date_created']);
+        $image=$row['image'];
 
         $query = "SELECT * FROM reply WHERE title = \"$title\"";
         $result2 = $db->query($query);
@@ -165,6 +173,7 @@ class MasterController {
                      "title"=>$title,
                      "author"=>$author,
                      "details"=>$details,
+                     "image"=>$image,
                      "date_created"=>$date_created,
                      "number_of_replies"=>$number_of_replies
                     );
@@ -200,52 +209,8 @@ class MasterController {
     }
 
     public static function  reply_to_topic($db,$replyer,$title,$message,$image){
-        $image_name=$image["name"];  ///no image is uploaded if name is empty
-        $image_size=$image["size"];
-        $image_type=$image["type"];
-        $baseUrl=$image["baseURl"];
 
-        $IMAGE=""; //image url to be inserted into the database
-
-        if(!($image_name == "" || $image_size == 0 )) {  //If an image is uploaded execute this block
-
-            ///file checking is taking place here
-            if($image_size/1024 > "2048"){
-                echo "Image size must not be greater than 2MB";
-                exit();
-            }
-
-            if($image_type != "image/png"   &&
-                $image_type != "image/gif"  &&
-                $image_type != "image/jpg"   &&
-                $image_type != "image/jpeg"
-            ) {
-                echo "Sorry this file is not supported";
-                exit();
-            }
-
-
-            $uploaded_file="ImageUploads/".date("Y_m_d_H_i_s").$image_name;
-
-
-            if(is_uploaded_file($image["tmp_name"])){
-                if(!move_uploaded_file($image["tmp_name"],$uploaded_file)){
-                    echo "Something went wrong";
-                    exit();
-                }
-            }
-
-//        $info = getimagesize($uploaded_file);
-//        if($info["mime"]=="image/jpeg") $compressed= imagecreatefromjpeg($uploaded_file);
-//         elseif($info["mime"]=="image/gif") $compressed= imagecreatefromgif($uploaded_file);
-//        elseif($info["mime"]=="image/png") $compressed= imagecreatefromgif($uploaded_file);
-//
-//        imagejpeg($compressed,$uploaded_file,50);
-
-
-            $IMAGE = $baseUrl."/".$uploaded_file;
-
-        }
+        $IMAGE = MasterController::processedImage($image);
 
         //insert reply into table
         $query="INSERT INTO reply(title,message,replyer,image) VALUES(\"$title\",\"$message\",\"$replyer\",\"$IMAGE\")";
@@ -259,7 +224,14 @@ class MasterController {
 
     public static function  update_topic($db,$id,$details,$image){
 
-        return "OK";
+        $IMAGE = MasterController::processedImage($image);
+
+        $query ="UPDATE `topic` SET `details` = \"$details\", `image` = \"$IMAGE\" WHERE `topic`.`id` = \"$id\"";
+        $result = $db->query($query);
+      if($result) return "OK";
+      else return "ERROR";
     }
+
+
 }
 
