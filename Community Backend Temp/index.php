@@ -29,7 +29,7 @@ $app->match("GET|POST",'/retrieve-topics', function() use ($db_server,$app){
       "Topics"=>MasterController::retrieve_or_filter_topics($db_server,$search_string)
   ]);
 
-    ////will come back to this to retrieve them in batches
+    //will come back to this to retrieve them in batches
 });
 
 
